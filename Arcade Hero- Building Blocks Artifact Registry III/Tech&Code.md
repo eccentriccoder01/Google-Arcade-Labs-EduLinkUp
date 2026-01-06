@@ -1,4 +1,4 @@
-# 🌐 Arcade Hero: Building Blocks Artifact Registry III || arc1209 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6154/labs/39076)
+﻿# 🌐 Arcade Hero: Building Blocks Artifact Registry III || arc1209 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6154/labs/39076)
 
 ## ⚠️ Disclaimer ⚠️
 
@@ -15,9 +15,9 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Arcade%20Hero%3A%20Building%20Blocks%20Artifact%20Registry%20III/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Arcade%20Hero%3A%20Building%20Blocks%20Artifact%20Registry%20III/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>

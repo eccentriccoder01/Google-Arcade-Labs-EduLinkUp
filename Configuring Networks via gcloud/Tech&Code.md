@@ -1,4 +1,4 @@
-# 🌐  Configuring Networks via gcloud || GSP630 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/focuses/7140?parent=catalog)
+﻿# 🌐  Configuring Networks via gcloud || GSP630 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/focuses/7140?parent=catalog)
 
 ## ⚠️ Disclaimer ⚠️
 
@@ -15,9 +15,9 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO https://raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Configuring%20Networks%20via%20gcloud/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO https://raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Configuring%20Networks%20via%20gcloud/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>

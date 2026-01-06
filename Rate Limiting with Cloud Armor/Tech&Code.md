@@ -1,4 +1,4 @@
-# 🌐 Rate Limiting with Cloud Armor || GSP975 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6189/labs/39266)
+﻿# 🌐 Rate Limiting with Cloud Armor || GSP975 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6189/labs/39266)
 
 ## ⚠️ Disclaimer ⚠️
 
@@ -15,9 +15,9 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Rate%20Limiting%20with%20Cloud%20Armor/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Rate%20Limiting%20with%20Cloud%20Armor/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>

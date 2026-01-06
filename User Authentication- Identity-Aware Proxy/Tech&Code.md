@@ -1,4 +1,4 @@
-# 🌐  User Authentication: Identity-Aware Proxy || GSP499 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6167/labs/39150)
+﻿# 🌐  User Authentication: Identity-Aware Proxy || GSP499 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6167/labs/39150)
 
 ## ⚠️ Disclaimer ⚠️
 
@@ -15,9 +15,9 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO https://raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/User%20Authentication%3A%20Identity-Aware%20Proxy/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO https://raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/User%20Authentication%3A%20Identity-Aware%20Proxy/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>

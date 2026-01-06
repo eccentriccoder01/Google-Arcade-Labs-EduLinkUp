@@ -1,4 +1,4 @@
-# 🌐 Pub/Sub: Qwik Start - Python || GSP094 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6168/labs/39159)
+﻿# 🌐 Pub/Sub: Qwik Start - Python || GSP094 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6168/labs/39159)
 
 ## ⚠️ Disclaimer ⚠️
 
@@ -15,9 +15,9 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/PubSub%3A%20Qwik%20Start%20-%20Python/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/PubSub%3A%20Qwik%20Start%20-%20Python/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>

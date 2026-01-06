@@ -1,4 +1,4 @@
-# 🌐 Build a Serverless App with Cloud Run that Creates PDF Files || GSP644 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6189/labs/39270)
+﻿# 🌐 Build a Serverless App with Cloud Run that Creates PDF Files || GSP644 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6189/labs/39270)
 
 ## ⚠️ Disclaimer ⚠️
 
@@ -15,9 +15,9 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Build%20a%20Serverless%20App%20with%20Cloud%20Run%20that%20Creates%20PDF%20Files/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Build%20a%20Serverless%20App%20with%20Cloud%20Run%20that%20Creates%20PDF%20Files/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>

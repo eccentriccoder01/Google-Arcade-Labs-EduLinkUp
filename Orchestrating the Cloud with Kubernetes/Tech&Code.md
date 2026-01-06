@@ -1,4 +1,4 @@
-# 🌐 Orchestrating the Cloud with Kubernetes || GSP021 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6168/labs/39157)
+﻿# 🌐 Orchestrating the Cloud with Kubernetes || GSP021 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6168/labs/39157)
 
 ## ⚠️ Disclaimer ⚠️
 
@@ -15,9 +15,9 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Orchestrating%20the%20Cloud%20with%20Kubernetes/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Orchestrating%20the%20Cloud%20with%20Kubernetes/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>

@@ -1,4 +1,4 @@
-# 🌐 Arcade Hero: Building Blocks Artifact Registry II || arc1208 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6154/labs/39075)
+﻿# 🌐 Arcade Hero: Building Blocks Artifact Registry II || arc1208 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6154/labs/39075)
 
 ## 🚀 Watch This Video For The Updated Solution [Complete Solution](https://www.youtube.com/watch?v=aDfUqM9quJ0&ab_channel=Tech%26Code)
 
@@ -17,9 +17,9 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO https://raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Arcade%20Hero%3A%20Building%20Blocks%20Artifact%20Registry%20II/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO https://raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Arcade%20Hero%3A%20Building%20Blocks%20Artifact%20Registry%20II/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>

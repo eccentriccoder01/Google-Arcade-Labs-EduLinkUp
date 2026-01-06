@@ -1,4 +1,4 @@
-# 🌐 Create and Test a Document AI Processor || GSP924 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6314/labs/39905)
+﻿# 🌐 Create and Test a Document AI Processor || GSP924 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6314/labs/39905)
 
 ## ⚠️ Disclaimer ⚠️
 
@@ -25,9 +25,9 @@ gcloud compute ssh document-ai-dev --project=$DEVSHELL_PROJECT_ID --zone=$ZONE -
 * Download [form.pdf](https://storage.googleapis.com/cloud-training/document-ai/generic/form.pdf)
 
 ```bash
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Create%20and%20Test%20a%20Document%20AI%20Processor/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Create%20and%20Test%20a%20Document%20AI%20Processor/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>

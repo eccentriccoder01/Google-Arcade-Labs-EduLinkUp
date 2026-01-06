@@ -1,4 +1,4 @@
-# 🌐 Deploy a Modern Web App connected to a Cloud Spanner Instance || GSP1051 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6189/labs/39269)
+﻿# 🌐 Deploy a Modern Web App connected to a Cloud Spanner Instance || GSP1051 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/games/6189/labs/39269)
 
 ## ⚠️ Disclaimer ⚠️
 
@@ -19,9 +19,9 @@ nvm install 22.6
 ```
 
 ```bash
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Deploy%20a%20Modern%20Web%20App%20connected%20to%20a%20Cloud%20Spanner%20Instance/TechCode.sh
-sudo chmod +x TechCode.sh
-./TechCode.sh
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Deploy%20a%20Modern%20Web%20App%20connected%20to%20a%20Cloud%20Spanner%20Instance/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
+./EduLinkUp.sh
 ```
 
 </div>
