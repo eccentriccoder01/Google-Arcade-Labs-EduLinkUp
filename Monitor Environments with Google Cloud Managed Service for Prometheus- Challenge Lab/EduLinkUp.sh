@@ -70,7 +70,7 @@ collection:
   filter:
     matchOneOf:
     - '{job="prom-example"}'
-    - '{__name__=~"job:.+"}'
+    - '{__name__=~"job.+"}'
 kind: OperatorConfig
 metadata:
   annotations:

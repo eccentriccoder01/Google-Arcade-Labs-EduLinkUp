@@ -11,15 +11,15 @@
 
 ## 📋 Lab Overview
 
-This lab walks you through the Google APIs Explorer, focusing on App Engine APIs. You'll learn how to interact with Google Cloud services programmatically and understand the API request/response cycle.
+This challenge lab tests your skills in Protect Cloud Traffic with Chrome Enterprise Premium Security. You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
 
 ```mermaid
 graph LR
-    A[Start Lab] --> B[Open APIs Explorer]
-    B --> C[Authenticate]
-    C --> D[Select App Engine API]
-    D --> E[Make API Calls]
-    E --> F[Analyze Responses]
+    A[Start Lab] --> B[Review Requirements]
+    B --> C[Set Up Environment]
+    C --> D[Complete Tasks]
+    D --> E[Verify Solutions]
+    E --> F[Submit Work]
     F --> G[Complete Lab]
     
     style A fill:#4285F4,stroke:#1967D2,color:#fff
@@ -96,7 +96,7 @@ graph LR
 </div>
 
 <details>
-<summary><b> ⚠️ Disclaimer ⚠️ - 📖 Educational Use Policy (Expand)</b></summary>
+<summary><b>📖 Educational Use Policy</b></summary>
 
 <br>
 
@@ -107,7 +107,7 @@ This repository provides learning resources to help you understand Google Cloud 
 <tr>
 <td width="50%" valign="top">
 
-### Intended Use
+### ✅ Intended Use
 
 - Study and understand the underlying Google Cloud operations
 - Learn automation techniques for cloud infrastructure
@@ -180,6 +180,18 @@ graph LR
 ```
 
 </div>
+
+<br>
+
+Having issues? Here are quick solutions:
+
+| Issue | Solution |
+|-------|----------|
+| Script won't run | Check execute permissions with `ls -la` |
+| Authentication errors | Verify you're logged into the correct project |
+| API not enabled | Enable required APIs in console |
+| Timeout errors | Check your internet connection and retry |
+| Permission denied | Ensure your account has proper IAM roles |
 
 ---
 

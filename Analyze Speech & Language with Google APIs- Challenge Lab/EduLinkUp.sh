@@ -83,9 +83,9 @@ def print_result(annotations):
 
     for index, sentence in enumerate(annotations.sentences):
         sentence_sentiment = sentence.sentiment.score
-        print(f"Sentence {index} sentiment score: {sentence_sentiment:.2f}")
+        print(f"Sentence {index} sentiment score: {sentence_sentiment.2f}")
 
-    print(f"\nOverall Sentiment: Score {score:.2f}, Magnitude {magnitude:.2f}")
+    print(f"\nOverall Sentiment: Score {score.2f}, Magnitude {magnitude.2f}")
     return 0
 
 def analyze(movie_review_filename):
