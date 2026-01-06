@@ -171,6 +171,41 @@ We believe in learning through understanding. While our scripts save time, we st
 
 ## 🛠️ Troubleshooting
 
+<div align="center">
+
+```mermaid
+graph LR
+    Issue[❌ Encountered Issue?] --> Type{Issue Type}
+    
+    Type -->|Permission| P1[Check IAM Roles]
+    Type -->|API| A1[Verify API Enabled]
+    Type -->|Authentication| Auth1[Re-authenticate]
+    Type -->|Script| S1[Check Script Syntax]
+    
+    P1 --> P2[Add Required Permissions]
+    A1 --> A2[Enable in Console]
+    Auth1 --> Auth2[gcloud auth login]
+    S1 --> S2[Review Error Output]
+    
+    P2 --> Retry[🔄 Retry Operation]
+    A2 --> Retry
+    Auth2 --> Retry
+    S2 --> Retry
+    
+    Retry --> Success{Fixed?}
+    Success -->|Yes| Done([✅ Resolved])
+    Success -->|No| Help[📞 Seek Help]
+    
+    style Issue fill:#FFCDD2,stroke:#C62828
+    style Done fill:#C8E6C9,stroke:#388E3C
+    style Retry fill:#FFF9C4,stroke:#F9A825
+    style Help fill:#E1BEE7,stroke:#8E24AA
+```
+
+</div>
+
+<br>
+
 Having issues? Here are quick solutions:
 
 | Issue | Solution |
