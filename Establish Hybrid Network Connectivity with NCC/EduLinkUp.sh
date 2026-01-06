@@ -1,5 +1,32 @@
 #!/bin/bash
 
+# Define color variables
+BLACK_TEXT=$'\033[0;90m'
+RED_TEXT=$'\033[0;91m'
+GREEN_TEXT=$'\033[0;92m'
+YELLOW_TEXT=$'\033[0;93m'
+BLUE_TEXT=$'\033[0;94m'
+MAGENTA_TEXT=$'\033[0;95m'
+CYAN_TEXT=$'\033[0;96m'
+WHITE_TEXT=$'\033[0;97m'
+
+NO_COLOR=$'\033[0m'
+RESET_FORMAT=$'\033[0m'
+
+# Define text formatting variables
+BOLD_TEXT=$'\033[1m'
+UNDERLINE_TEXT=$'\033[4m'
+
+clear
+
+# Welcome message
+echo "${YELLOW_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║                   EDULINKUP LAB AUTOMATION                       ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning Journey...            ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
+echo
+
+
 BLACK_TEXT=$'\033[0;90m'
 RED_TEXT=$'\033[0;91m'
 GREEN_TEXT=$'\033[0;92m'
@@ -16,16 +43,6 @@ BLINK_TEXT=$'\033[5m'
 NO_COLOR=$'\033[0m'
 RESET_FORMAT=$'\033[0m'
 REVERSE_TEXT=$'\033[7m'
-
-
-clear
-
-# Welcome message
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}      SUBSCRIBE TECH & CODE- INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
-echo
-
 
 if [[ -z "$zone" ]]; then
     echo "${CYAN_TEXT}Enter your Zone (example: us-central1-f):${RESET_FORMAT}"
@@ -52,7 +69,6 @@ echo "${GREEN_TEXT}Using Project ID: $PROJECT_ID${RESET_FORMAT}"
 echo "${MAGENTA_TEXT}${BOLD_TEXT}Tech & Code – Subscribe Here: https://www.youtube.com/@TechCode9${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}Enabling Required API${RESET_FORMAT}"
 gcloud services enable networkconnectivity.googleapis.com
-
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}Creating Cloud Routers${RESET_FORMAT}"
@@ -90,7 +106,6 @@ gcloud compute vpn-gateways create "$on_prem_gateway_name" \
     --region="$region" \
     --network="$on_prem_network_name"
 
-
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}Creating VPN Tunnels${RESET_FORMAT}"
 
@@ -113,7 +128,6 @@ gcloud compute vpn-tunnels create "$on_prem_tunnel_name" \
     --region="$region" \
     --interface=0 \
     --shared-secret="$secret_key"
-
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}Configuring BGP Peering${RESET_FORMAT}"
@@ -149,7 +163,6 @@ gcloud compute routers add-bgp-peer "$on_prem_router_name" \
     --interface="if-prem-to-hub" \
     --peer-asn="$routing_vpc_router_asn" \
     --region="$region"
-
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}Announcing Prefixes${RESET_FORMAT}"
@@ -189,7 +202,6 @@ gcloud network-connectivity spokes linked-vpn-tunnels create "$vpn_spoke_name" \
     --hub="$hub_name" \
     --vpn-tunnels="$routing_vpc_tunnel_name"
 
-
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}Setup Complete${RESET_FORMAT}"
 echo "Test connectivity:"
@@ -197,13 +209,13 @@ echo "ssh vm3-onprem --zone $zone"
 echo "curl 10.0.1.2 -v"
 echo
 
-
 # Final message
 echo
-echo "${YELLOW_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${YELLOW_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${YELLOW_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}║                   LAB COMPLETED SUCCESSFULLY!                    ║${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}Don't forget to Like, Share and Subscribe for more Videos${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📺 SUBSCRIBE TO EDULINKUP FOR MORE CLOUD LABS! 📺${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}🔗 https://www.youtube.com/@EduLinkUp${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}💡 Keep Learning, Keep Growing! 💡${RESET_FORMAT}"
 echo

@@ -16,19 +16,19 @@ RESET_FORMAT=$'\033[0m'
 # Define text formatting variables
 BOLD_TEXT=$'\033[1m'
 UNDERLINE_TEXT=$'\033[4m'
-BOLD=`tput bold`
-RESET=`tput sgr0`
+
 clear
 
-
 # Welcome message
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║                   EDULINKUP LAB AUTOMATION                       ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning Journey...            ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
 
 
-
+BOLD=`tput bold`
+RESET=`tput sgr0`
 gcloud auth list
 
 gcloud services enable aiplatform.googleapis.com
@@ -54,11 +54,9 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
   --member="serviceAccount:$SERVICE_ACCOUNT" \
   --role="roles/aiplatform.user"
 
-
 sleep 20
 
 # Task 2
-
 
 bq query --use_legacy_sql=false "
 CREATE OR REPLACE EXTERNAL TABLE \`${PROJECT_ID}.gcc_bqml_dataset.gcc_image_object_table\`
@@ -68,11 +66,9 @@ OPTIONS (
   uris = ['gs://${PROJECT_ID}/*']
 )"
 
-
 sleep 10
 
 # TAsk 3
-
 
 bq query --use_legacy_sql=false "
 CREATE OR REPLACE MODEL \`${PROJECT_ID}.gcc_bqml_dataset.gcc_embedding\`
@@ -80,7 +76,6 @@ REMOTE WITH CONNECTION \`${REGION}.vector_conn\`
 OPTIONS (
   endpoint = 'multimodalembedding@001'
 );"
-
 
 sleep 10
 
@@ -92,11 +87,9 @@ FROM ML.GENERATE_EMBEDDING(
   TABLE \`${PROJECT_ID}.gcc_bqml_dataset.gcc_image_object_table\`
 );"
 
-
 sleep 10
 
 bq show --format=prettyjson ${PROJECT_ID}:gcc_bqml_dataset.gcc_retail_store_embeddings
-
 
 sleep 10
 
@@ -130,9 +123,7 @@ FROM
 
 sleep 20
 
-
 # TAsk 3
-
 
 bq query --use_legacy_sql=false "
 CREATE OR REPLACE MODEL \`${PROJECT_ID}.gcc_bqml_dataset.gcc_embedding\`
@@ -140,7 +131,6 @@ REMOTE WITH CONNECTION \`${REGION}.vector_conn\`
 OPTIONS (
   endpoint = 'multimodalembedding@001'
 );"
-
 
 sleep 10
 
@@ -152,11 +142,9 @@ FROM ML.GENERATE_EMBEDDING(
   TABLE \`${PROJECT_ID}.gcc_bqml_dataset.gcc_image_object_table\`
 );"
 
-
 sleep 10
 
 bq show --format=prettyjson ${PROJECT_ID}:gcc_bqml_dataset.gcc_retail_store_embeddings
-
 
 sleep 10
 
@@ -188,14 +176,13 @@ FROM
   );
 "
 
-
 # Final message
-
 echo
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-
+echo "${GREEN_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}║                   LAB COMPLETED SUCCESSFULLY!                    ║${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-echo "${GREEN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📺 SUBSCRIBE TO EDULINKUP FOR MORE CLOUD LABS! 📺${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}🔗 https://www.youtube.com/@EduLinkUp${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}💡 Keep Learning, Keep Growing! 💡${RESET_FORMAT}"
 echo

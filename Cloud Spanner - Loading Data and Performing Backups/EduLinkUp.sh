@@ -20,12 +20,11 @@ UNDERLINE_TEXT=$'\033[4m'
 clear
 
 # Welcome message
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║                   EDULINKUP LAB AUTOMATION                       ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning Journey...            ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-
-
 
 
 gcloud auth list
@@ -39,7 +38,6 @@ gcloud config set compute/region $REGION
 export PROJECT_ID=$(gcloud config get-value project)
 
 export PROJECT_ID=$DEVSHELL_PROJECT_ID
-
 
 gcloud spanner databases execute-sql banking-db --instance=banking-instance \
  --sql="INSERT INTO Customer (CustomerId, Name, Location) VALUES ('bdaaaa97-1b4b-4e58-b4ad-84030de92235', 'Richard Nelson', 'Ada Ohio')"
@@ -68,9 +66,7 @@ EOF_CP
 
 python3 insert.py
 
-
 sleep 60
-
 
 cat > batch_insert.py <<EOF_CP
 from google.cloud import spanner
@@ -99,24 +95,16 @@ with database.batch() as batch:
 print("Rows inserted")
 EOF_CP
 
-
 python3 batch_insert.py
 
-
 sleep 60
-
-
-
-
 
 gsutil mb gs://$DEVSHELL_PROJECT_ID
 touch emptyfile
 gsutil cp emptyfile gs://$DEVSHELL_PROJECT_ID/tmp/emptyfile
 
-
 gcloud services disable dataflow.googleapis.com --force
 gcloud services enable dataflow.googleapis.com
-
 
 sleep 90
 
@@ -124,14 +112,13 @@ gcloud dataflow jobs run spanner-load --gcs-location gs://dataflow-templates-$RE
 
 echo -e "\033[1;33mCheck Dataflow Job is status\033[0m \033[1;34mhttps://console.cloud.google.com/dataflow/jobs?referrer=search&project=$DEVSHELL_PROJECT_ID\033[0m"
 
-
-
-
 # Final message
 echo
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}║                   LAB COMPLETED SUCCESSFULLY!                    ║${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📺 SUBSCRIBE TO EDULINKUP FOR MORE CLOUD LABS! 📺${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}🔗 https://www.youtube.com/@EduLinkUp${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}💡 Keep Learning, Keep Growing! 💡${RESET_FORMAT}"
 echo

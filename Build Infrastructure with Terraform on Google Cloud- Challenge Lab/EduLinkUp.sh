@@ -20,10 +20,12 @@ UNDERLINE_TEXT=$'\033[4m'
 clear
 
 # Welcome message
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}      SUBSCRIBE TECH & CODE- INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║                   EDULINKUP LAB AUTOMATION                       ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning Journey...            ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
+
 
 echo -e "${GREEN_TEXT}${BOLD_TEXT}Enter the BUCKET name: ${RESET_FORMAT}\c"
 read BUCKET
@@ -107,7 +109,6 @@ EOF_END
 
 terraform init
 
-
 cat > modules/instances/instances.tf <<EOF_END
 resource "google_compute_instance" "tf-instance-1" {
     name         = "tf-instance-1"
@@ -158,7 +159,6 @@ terraform plan
 
 terraform apply -auto-approve
 
-
 cat > modules/storage/storage.tf <<EOF_END
 resource "google_storage_bucket" "storage-bucket" {
     name          = "$BUCKET"
@@ -208,7 +208,6 @@ module "storage" {
 EOF_END
 
 terraform init
-
 
 cat > modules/instances/instances.tf <<EOF_END
 resource "google_compute_instance" "tf-instance-1" {
@@ -276,7 +275,6 @@ terraform init
 
 terraform apply -auto-approve
 
-
 terraform taint module.instances.google_compute_instance.$INSTANCE
 
 terraform init
@@ -328,7 +326,6 @@ resource "google_compute_instance" "tf-instance-2" {
 EOF_END
 
 terraform apply -auto-approve
-
 
 cat >> main.tf <<EOF_END
 module "vpc" {
@@ -413,7 +410,6 @@ terraform plan
 
 terraform apply -auto-approve
 
-
 cat >> main.tf <<EOF_END
 resource "google_compute_firewall" "tf-firewall"{
     name    = "tf-firewall"
@@ -437,10 +433,11 @@ terraform apply -auto-approve
 
 # Final message
 echo
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}║                   LAB COMPLETED SUCCESSFULLY!                    ║${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}Don't forget to Like, Share and Subscribe for more Videos${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📺 SUBSCRIBE TO EDULINKUP FOR MORE CLOUD LABS! 📺${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}🔗 https://www.youtube.com/@EduLinkUp${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}💡 Keep Learning, Keep Growing! 💡${RESET_FORMAT}"
 echo

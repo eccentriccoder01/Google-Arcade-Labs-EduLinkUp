@@ -16,7 +16,7 @@ sudo chmod +x EduLinkUp.sh
 ```  
 ---
 
-## 🎉 **Congratulations! Lab Completed Successfully!** 🏆😄
+## 🎉 **Congratulations! LAB COMPLETED SUCCESSFULLY!   ** 🏆😄
 
 ---
 

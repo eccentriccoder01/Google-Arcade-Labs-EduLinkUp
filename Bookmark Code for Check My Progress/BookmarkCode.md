@@ -98,7 +98,7 @@ javascript:(function () {
 
 ---
 
-## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
+## 🎉 **Congratulations! LAB COMPLETED SUCCESSFULLY!   ** 🏆  
 
 <div style="text-align:center; padding: 10px 0; max-width: 640px; margin: 0 auto;">
   <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 14px;">📱 Join the Tech & Code Community</h3>

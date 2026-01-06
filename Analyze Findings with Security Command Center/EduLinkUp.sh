@@ -16,17 +16,19 @@ RESET_FORMAT=$'\033[0m'
 # Define text formatting variables
 BOLD_TEXT=$'\033[1m'
 UNDERLINE_TEXT=$'\033[4m'
-BOLD=`tput bold`
-RESET=`tput sgr0`
+
 clear
 
-
 # Welcome message
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║                   EDULINKUP LAB AUTOMATION                       ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning Journey...            ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
 
+
+BOLD=`tput bold`
+RESET=`tput sgr0`
 # Function to display spinner during long operations
 show_spinner() {
     local pid=$!
@@ -154,7 +156,6 @@ echo "Waiting for security findings"
 #     fi
 # done
 
-
 # Function to query findings in BigQuery
 query_findings() {
   bq query --use_legacy_sql=false --format=json \
@@ -192,8 +193,6 @@ if [ $attempt -gt $MAX_ATTEMPTS ]; then
     # exit 1
 fi
 
-
-
 # Step 9: Set up Cloud Storage bucket
 echo "Setting up Cloud Storage"
 gsutil mb -l $REGION gs://$BUCKET_NAME/ &
@@ -217,7 +216,7 @@ show_spinner "Uploading findings to bucket"
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!                 ${RESET_FORMAT}"
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
 
 echo
@@ -226,3 +225,14 @@ echo
 
 echo "Next steps:"
 echo "┣ View findings in BigQuery: https://console.cloud.google.com/bigquery?project=${PROJECT_ID}"
+
+# Final message
+echo
+echo "${GREEN_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}║                   LAB COMPLETED SUCCESSFULLY!                    ║${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
+echo
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📺 SUBSCRIBE TO EDULINKUP FOR MORE CLOUD LABS! 📺${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}🔗 https://www.youtube.com/@EduLinkUp${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}💡 Keep Learning, Keep Growing! 💡${RESET_FORMAT}"
+echo

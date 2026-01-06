@@ -1,330 +1,217 @@
-# 🌐 Build LookML Objects in Looker: Challenge Lab || GSP361 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.cloudskillsboost.google/course_templates/639/labs/588050)
+<div align="center">
 
-## ⚠️ Disclaimer ⚠️
+# Build LookML Objects in Looker: Challenge Lab
+### Google Cloud Skills Boost - Lab GSP361
 
-<blockquote style="background-color: #fffbea; border-left: 6px solid #f7c948; padding: 1em; font-size: 15px; line-height: 1.5;">
-  <strong>Educational Purpose Only:</strong> This script and guide are provided for the educational purposes to help you understand the lab services and boost your career. Before using the script, please open and review it to familiarize yourself with Google Cloud services.
-  <br><br>
-  <strong>Terms Compliance:</strong> Always ensure compliance with Qwiklabs' terms of service and YouTube's community guidelines. The aim is to enhance your learning experience — not to circumvent it.
-</blockquote>
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/course_templates/639/labs/588050)
+
+</div>
 
 ---
 
-<div style="padding: 15px; margin: 10px 0;">
+## 📋 Lab Overview
 
-## Task 1. Create `order_items_challenge`
+This lab walks you through the Google APIs Explorer, focusing on App Engine APIs. You'll learn how to interact with Google Cloud services programmatically and understand the API request/response cycle.
 
-```bash
-
-view: order_items_challenge {
-  sql_table_name: `cloud-training-demos.looker_ecomm.order_items`  ;;
-  drill_fields: [order_item_id]
-  dimension: order_item_id {
-  primary_key: yes
-  type: number
-  sql: ${TABLE}.id ;;
-  }
-
-  dimension: is_search_source {
-  type: yesno
-  sql: ${users.traffic_source} = "Search" ;;
-  }
-
-
-  measure: sales_from_complete_search_users {
-  type: sum
-  sql: ${TABLE}.sale_price ;;
-  filters: [is_search_source: "Yes", order_items.status: "Complete"]
-  }
-
-
-  measure: total_gross_margin {
-  type: sum
-  sql: ${TABLE}.sale_price - ${inventory_items.cost} ;;
-  }
-
-
-  dimension: return_days {
-  type: number
-  sql: DATE_DIFF(${order_items.delivered_date}, ${order_items.returned_date}, DAY);;
-  }
-  dimension: order_id {
-  type: number
-  sql: ${TABLE}.order_id ;;
-  }
-
-}
+```mermaid
+graph LR
+    A[Start Lab] --> B[Open APIs Explorer]
+    B --> C[Authenticate]
+    C --> D[Select App Engine API]
+    D --> E[Make API Calls]
+    E --> F[Analyze Responses]
+    F --> G[Complete Lab]
+    
+    style A fill:#4285F4,stroke:#1967D2,color:#fff
+    style G fill:#34A853,stroke:#188038,color:#fff
+    style C fill:#FBBC04,stroke:#F29900,color:#000
 ```
 
-## Task 2. Create `user_details`
+---
+
+## ⚡ Quick Start Guide
+
+Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
-# If necessary, uncomment the line below to include explore_source.
-# include: "training_ecommerce.model.lkml"
-
-view: user_details {
-  derived_table: {
-  explore_source: order_items {
-    column: order_id {}
-    column: user_id {}
-    column: total_revenue {}
-    column: age { field: users.age }
-    column: city { field: users.city }
-    column: state { field: users.state }
-  }
-  }
-  dimension: order_id {
-  description: ""
-  type: number
-  }
-  dimension: user_id {
-  description: ""
-  type: number
-  }
-  dimension: total_revenue {
-  description: ""
-  value_format: "$#,##0.00"
-  type: number
-  }
-  dimension: age {
-  description: ""
-  type: number
-  }
-  dimension: city {
-  description: ""
-  }
-  dimension: state {
-  description: ""
-  }
-}
-```
-## Task 4. Update `training_ecommerce.model`
-
-```bash
-
-connection: "bigquery_public_data_looker"
-
-# include all the views
-include: "/views/*.view"
-include: "/z_tests/*.lkml"
-include: "/**/*.dashboard"
-
-datagroup: training_ecommerce_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
-}
-
-persist_with: training_ecommerce_default_datagroup
-
-label: "E-Commerce Training"
-
-explore: order_items {
-
-
-
-  sql_always_where: ${sale_price} >= VALUE_1 ;;
-
-
-  conditionally_filter: {
-
-  filters: [order_items.shipped_date: "2018"]
-
-  unless: [order_items.status, order_items.delivered_date]
-
-  }
-
-
-  sql_always_having: ${average_sale_price} > VALUE_2 ;;
-
-  always_filter: {
-  filters: [order_items.status: "Shipped", users.state: "California", users.traffic_source:
-    "Search"]
-  }
-
-
-
-  join: user_details {
-
-  type: left_outer
-
-  sql_on: ${order_items.user_id} = ${user_details.user_id} ;;
-
-  relationship: many_to_one
-
-  }
-
-
-  join: order_items_challenge {
-  type: left_outer
-  sql_on: ${order_items.order_id} = ${order_items_challenge.order_id} ;;
-  relationship: many_to_one
-  }
-
-  join: users {
-  type: left_outer
-  sql_on: ${order_items.user_id} = ${users.id} ;;
-  relationship: many_to_one
-  }
-
-
-
-  join: inventory_items {
-  type: left_outer
-  sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
-  relationship: many_to_one
-  }
-
-  join: products {
-  type: left_outer
-  sql_on: ${inventory_items.product_id} = ${products.id} ;;
-  relationship: many_to_one
-  }
-
-  join: distribution_centers {
-  type: left_outer
-  sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
-  relationship: many_to_one
-  }
-}
-
-explore: events {
-  join: event_session_facts {
-  type: left_outer
-  sql_on: ${events.session_id} = ${event_session_facts.session_id} ;;
-  relationship: many_to_one
-  }
-  join: event_session_funnel {
-  type: left_outer
-  sql_on: ${events.session_id} = ${event_session_funnel.session_id} ;;
-  relationship: many_to_one
-  }
-  join: users {
-  type: left_outer
-  sql_on: ${events.user_id} = ${users.id} ;;
-  relationship: many_to_one
-  }
-}
+curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Build%20LookML%20Objects%20in%20Looker-%20Challenge%20Lab/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh 
+./EduLinkUp.sh
 ```
 
-## Task 5. Update `training_ecommerce.model`
+<div align="center">
 
-```bash
+### Launch Sequence
 
-connection: "bigquery_public_data_looker"
+```mermaid
+graph LR
+    A[📋 Copy Commands] --> B[🖥️ Open Cloud Shell]
+    B --> C[📥 Download Script]
+    C --> D[🔓 Make Executable]
+    D --> E[▶️ Run Script]
+    E --> F[✅ Lab Complete]
+    
+    style A fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#000
+    style F fill:#C8E6C9,stroke:#388E3C,stroke-width:3px,color:#000
+```
 
-# include all the views
-include: "/views/*.view"
-include: "/z_tests/*.lkml"
-include: "/**/*.dashboard"
+</div>
 
-datagroup: order_items_challenge_datagroup {
-  sql_trigger: SELECT MAX(order_item_id) from order_items ;;
-  max_cache_age: "NUM hours"
-}
+> **Note:** The script automates repetitive setup tasks. We encourage you to review the script content to understand each step and learn the underlying Google Cloud operations.
 
+---
 
-persist_with: order_items_challenge_datagroup
+## 🔐 Important Notice
 
+<div align="center">
 
-label: "E-Commerce Training"
+```mermaid
+graph LR
+    Start([Use This Resource?]) --> Question{What's Your Goal?}
+    Question -->|Learn & Understand| Manual[📚 Study the Code]
+    Question -->|Quick Review| Auto[⚡ Use Automation]
+    Question -->|Certification Prep| Both[🎯 Do Both]
+    
+    Manual --> Read[Read Script Line by Line]
+    Read --> Understand[Understand Each Command]
+    Understand --> Practice[Practice Manually First]
+    
+    Auto --> Review[Review Before Running]
+    Review --> Execute[Execute Script]
+    Execute --> Reflect[Reflect on Output]
+    
+    Both --> Manual
+    Both --> Auto
+    
+    Practice --> Success([✅ Deep Learning Achieved])
+    Reflect --> Success
+    
+    style Start fill:#E3F2FD,stroke:#1976D2,color:#000
+    style Success fill:#C8E6C9,stroke:#388E3C,color:#000
+    style Manual fill:#FFF3E0,stroke:#F57C00,color:#000
+    style Auto fill:#F3E5F5,stroke:#7B1FA2,color:#000
+    style Both fill:#E0F2F1,stroke:#00796B,color:#000
+```
 
-explore: order_items {
-  join: user_details {
+</div>
 
-  type: left_outer
+<details>
+<summary><b> ⚠️ Disclaimer ⚠️ - 📖 Educational Use Policy (Expand)</b></summary>
 
-  sql_on: ${order_items.user_id} = ${user_details.user_id} ;;
+<br>
 
-  relationship: many_to_one
+**Purpose**  
+This repository provides learning resources to help you understand Google Cloud Platform services. The automation scripts are designed to demonstrate best practices and accelerate your learning journey.
 
-  }
+<table>
+<tr>
+<td width="50%" valign="top">
 
+### Intended Use
 
-  join: order_items_challenge {
-  type: left_outer
-  sql_on: ${order_items.order_id} = ${order_items_challenge.order_id} ;;
-  relationship: many_to_one
-  }
+- Study and understand the underlying Google Cloud operations
+- Learn automation techniques for cloud infrastructure
+- Prepare for certification or professional development
+- Review concepts after manual completion
 
-  join: users {
-  type: left_outer
-  sql_on: ${order_items.user_id} = ${users.id} ;;
-  relationship: many_to_one
-  }
+</td>
+<td width="50%" valign="top">
 
+### 📜 Terms of Service
 
+- Comply with Google Cloud Skills Boost terms of service
+- Use scripts for educational purposes only
+- Complete manual labs first before using automation
+- Give proper attribution if sharing or modifying
 
-  join: inventory_items {
-  type: left_outer
-  sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
-  relationship: many_to_one
-  }
+</td>
+</tr>
+</table>
 
-  join: products {
-  type: left_outer
-  sql_on: ${inventory_items.product_id} = ${products.id} ;;
-  relationship: many_to_one
-  }
+**Ethical Considerations**  
+We believe in learning through understanding. While our scripts save time, we strongly encourage you to:
 
-  join: distribution_centers {
-  type: left_outer
-  sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
-  relationship: many_to_one
-  }
-}
+<div align="center">
 
-explore: events {
-  join: event_session_facts {
-  type: left_outer
-  sql_on: ${events.session_id} = ${event_session_facts.session_id} ;;
-  relationship: many_to_one
-  }
-  join: event_session_funnel {
-  type: left_outer
-  sql_on: ${events.session_id} = ${event_session_funnel.session_id} ;;
-  relationship: many_to_one
-  }
-  join: users {
-  type: left_outer
-  sql_on: ${events.user_id} = ${users.id} ;;
-  relationship: many_to_one
-  }
-}
+| Step | Action | Why It Matters |
+|------|--------|----------------|
+| 1️⃣ | Read through the script code | Understand what will happen |
+| 2️⃣ | Complete labs manually first | Build foundational knowledge |
+| 3️⃣ | Understand each command | Learn the "why" not just "how" |
+| 4️⃣ | Use automation as a tool | Reinforce learning, don't replace it |
+
+</div>
+
+</details>
+
+---
+
+## 🛠️ Troubleshooting
+
+<div align="center">
+
+```mermaid
+graph LR
+    Issue[❌ Encountered Issue?] --> Type{Issue Type}
+    
+    Type -->|Permission| P1[Check IAM Roles]
+    Type -->|API| A1[Verify API Enabled]
+    Type -->|Authentication| Auth1[Re-authenticate]
+    Type -->|Script| S1[Check Script Syntax]
+    
+    P1 --> P2[Add Required Permissions]
+    A1 --> A2[Enable in Console]
+    Auth1 --> Auth2[gcloud auth login]
+    S1 --> S2[Review Error Output]
+    
+    P2 --> Retry[🔄 Retry Operation]
+    A2 --> Retry
+    Auth2 --> Retry
+    S2 --> Retry
+    
+    Retry --> Success{Fixed?}
+    Success -->|Yes| Done([✅ Resolved])
+    Success -->|No| Help[📞 Seek Help]
+    
+    style Issue fill:#FFCDD2,stroke:#C62828,color:#000
+    style Done fill:#C8E6C9,stroke:#388E3C,color:#000
+    style Retry fill:#FFF9C4,stroke:#F9A825,color:#000
+    style Help fill:#E1BEE7,stroke:#8E24AA,color:#000
 ```
 
 </div>
 
 ---
 
-## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
+## **Join Our Growing Ecosystem**
 
-<div style="text-align:center; padding: 10px 0; max-width: 640px; margin: 0 auto;">
-  <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 14px;">📱 Join the Tech & Code Community</h3>
+<div align="center">
 
-  <a href="https://www.youtube.com/@TechCode9?sub_confirmation=1" style="margin: 0 6px; display: inline-block;">
-    <img src="https://img.shields.io/badge/Subscribe-Tech%20&%20Code-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Channel">
-  </a>
+[![Website](https://img.shields.io/badge/🌍_Website-edulinkup.dev-6C63FF?style=for-the-badge&logoColor=white)](https://edulinkup.dev) [![LinkedIn](https://img.shields.io/badge/LinkedIn_Page-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/edulinkup) [![YouTube](https://img.shields.io/badge/YouTube_Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@EduLinkUp)
 
-  <a href="https://www.linkedin.com/in/prateekrajput08/" style="margin: 0 6px; display: inline-block;">
-    <img src="https://img.shields.io/badge/LinkedIn-Prateek%20Rajput-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile">
-  </a>
+---
 
-  <a href="https://t.me/techcode9" style="margin: 0 6px; display: inline-block;">
-    <img src="https://img.shields.io/badge/Telegram-Tech%20Code-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Channel">
-  </a>
+### 🌱 **Join the Developer Community**
 
-  <a href="https://www.instagram.com/techcodefacilitator" style="margin: 0 6px; display: inline-block;">
-    <img src="https://img.shields.io/badge/Instagram-Tech%20Code-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Profile">
-  </a>
+**Stay updated with everything happening in the EduLinkUp universe:**
+
+[![WhatsApp Community](https://img.shields.io/badge/WhatsApp_Community-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FriEJ8otpKVJux3H08SUhJ)
+
+---
+
+### 📩 **Let's Connect Personally**
+
+[![Personal LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eccentricexplorer)
+
 </div>
 
 ---
 
 <div align="center">
-  <p style="font-size: 12px; color: #586069;">
-    <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
-  </p>
-  <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: October 2025</em>
-  </p>
+
+*This guide was crafted with care to enhance your Google Cloud learning experience.*  
+*Remember: Understanding beats completion. Take your time and enjoy the journey.*
+
+<sub>Last updated: January 2026 | Version 1.0</sub>
+
 </div>

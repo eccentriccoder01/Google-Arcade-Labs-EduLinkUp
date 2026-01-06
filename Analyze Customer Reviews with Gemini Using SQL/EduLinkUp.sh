@@ -16,20 +16,20 @@ RESET_FORMAT=$'\033[0m'
 # Define text formatting variables
 BOLD_TEXT=$'\033[1m'
 UNDERLINE_TEXT=$'\033[4m'
-BOLD=`tput bold`
-RESET=`tput sgr0`
+
 clear
 
-
 # Welcome message
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║                   EDULINKUP LAB AUTOMATION                       ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning Journey...            ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
 
 
+BOLD=`tput bold`
+RESET=`tput sgr0`
 gcloud auth list
-
 
 bq mk \
   --connection \
@@ -38,9 +38,7 @@ bq mk \
   --connection_type=CLOUD_RESOURCE \
   gemini_conn
 
-
 SERVICE_ACCOUNT=$(bq show --location=US --connection gemini_conn | grep "serviceAccountId" | awk -F'"' '{print $4}')
-
 
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
   --member="serviceAccount:${SERVICE_ACCOUNT}" \
@@ -50,15 +48,9 @@ gcloud storage buckets add-iam-policy-binding gs://$DEVSHELL_PROJECT_ID-bucket \
   --member="serviceAccount:${SERVICE_ACCOUNT}" \
   --role="roles/storage.objectAdmin"
 
-
-
-
 bq --location=US mk gemini_demo
 
-
-
 sleep 30
-
 
 bq query --use_legacy_sql=false \
 "
@@ -68,8 +60,6 @@ FROM FILES (
   format = 'CSV',
   uris = ['gs://$DEVSHELL_PROJECT_ID-bucket/gsp1246/customer_reviews.csv']);
 "
-
-
 
 bq query --use_legacy_sql=false \
 "
@@ -88,7 +78,6 @@ CREATE OR REPLACE MODEL \`gemini_demo.gemini_2_0_flash\`
 REMOTE WITH CONNECTION \`us.gemini_conn\`
 OPTIONS (endpoint = 'gemini-2.0-flash')
 "
-
 
 bq query --use_legacy_sql=false '
 CREATE OR REPLACE TABLE
@@ -109,7 +98,6 @@ CREATE OR REPLACE TABLE
 );
 '
 
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.review_images_results\`
@@ -127,12 +115,10 @@ CREATE OR REPLACE TABLE
     `gemini_demo.review_images_results` results )
 '
 
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.review_images_results_formatted\`
 "
-
 
 bq query --use_legacy_sql=false \
 "
@@ -157,14 +143,10 @@ ML.GENERATE_TEXT(
 ));
 "
 
-
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.customer_reviews_keywords\`
 "
-
-
 
 bq query --use_legacy_sql=false "
 CREATE OR REPLACE TABLE \`gemini_demo.customer_reviews_analysis\` AS (
@@ -200,13 +182,11 @@ CREATE OR REPLACE TABLE \`gemini_demo.customer_reviews_analysis\` AS (
 );
 "
 
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.customer_reviews_analysis\`
 ORDER BY review_datetime
 "
-
 
 bq query --use_legacy_sql=false \
 "
@@ -223,16 +203,11 @@ review_text, customer_id, location_id, review_datetime
 FROM \`gemini_demo.customer_reviews_analysis\`;
 "
 
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.cleaned_data_view\`
 ORDER BY review_datetime
 "
-
-
-
-
 
 bq query --use_legacy_sql=false \
 "
@@ -242,9 +217,6 @@ WHERE sentiment IN ('positive', 'negative')
 GROUP BY sentiment; 
 "
 
-
-
-
 bq query --use_legacy_sql=false \
 "
 SELECT sentiment, social_media_source, COUNT(*) AS count
@@ -253,7 +225,6 @@ WHERE sentiment IN ('positive') OR sentiment IN ('negative')
 GROUP BY sentiment, social_media_source
 ORDER BY sentiment, count;    
 "
-
 
 bq query --use_legacy_sql=false \
 "
@@ -273,16 +244,10 @@ STRUCT(
    0.2 AS temperature, TRUE AS flatten_json_output)));
 "
 
-
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.customer_reviews_marketing\`
 "
-
-
-
-
 
 bq query --use_legacy_sql=false \
 '
@@ -296,15 +261,10 @@ FROM
    `gemini_demo.customer_reviews_marketing` results )
 '
 
-
-
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.customer_reviews_marketing_formatted\`
 "
-
-
 
 bq query --use_legacy_sql=false \
 "
@@ -324,12 +284,10 @@ STRUCT(
    0.2 AS temperature, TRUE AS flatten_json_output)));
 "
 
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.customer_reviews_cs_response\`
 "
-
 
 bq query --use_legacy_sql=false \
 '
@@ -344,14 +302,10 @@ FROM
    `gemini_demo.customer_reviews_cs_response` results )
 '
 
-
-
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.customer_reviews_cs_response_formatted\`
 "
-
 
 bq query --use_legacy_sql=false '
 CREATE OR REPLACE TABLE
@@ -372,14 +326,10 @@ CREATE OR REPLACE TABLE
 );
 '
 
-
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.review_images_results\`
 "
-
-
 
 bq query --use_legacy_sql=false \
 '
@@ -393,21 +343,18 @@ CREATE OR REPLACE TABLE
     `gemini_demo.review_images_results` results )
 '
 
-
-
 bq query --use_legacy_sql=false \
 "
 SELECT * FROM \`gemini_demo.review_images_results_formatted\`
 "
 
-
 # Final message
-
 echo
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-
+echo "${GREEN_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}║                   LAB COMPLETED SUCCESSFULLY!                    ║${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-echo "${GREEN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📺 SUBSCRIBE TO EDULINKUP FOR MORE CLOUD LABS! 📺${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}🔗 https://www.youtube.com/@EduLinkUp${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}💡 Keep Learning, Keep Growing! 💡${RESET_FORMAT}"
 echo

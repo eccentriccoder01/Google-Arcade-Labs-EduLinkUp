@@ -20,10 +20,12 @@ UNDERLINE_TEXT=$'\033[4m'
 clear
 
 # Welcome message
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}      SUBSCRIBE TECH & CODE- INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║                   EDULINKUP LAB AUTOMATION                       ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning Journey...            ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
+
 
 #!/bin/bash
 
@@ -34,7 +36,6 @@ REGION=$(gcloud compute project-info describe \
   --format="value(commonInstanceMetadata.items[google-compute-default-region])")
 PROJECT_ID=$(gcloud config get-value project)
 
-
 gcloud config set compute/zone $ZONE
 
 gcloud storage cp -r gs://spls/gsp053/kubernetes .
@@ -44,7 +45,6 @@ gcloud container clusters create bootcamp \
   --machine-type e2-small \
   --num-nodes 3 \
   --scopes "https://www.googleapis.com/auth/projecthosting,storage-rw"
-
 
 #TASK 2
 
@@ -57,7 +57,6 @@ kubectl get pods | grep fortune-app-blue | wc -l
 kubectl scale deployment fortune-app-blue --replicas=3
 kubectl get pods | grep fortune-app-blue | wc -l
 
-
 #TASK 3 (ask before continuing)
 # Simple colored prompt
 echo -ne "\e[1;33m? \e[1;36mDo you want to continue with Task 3? \e[0m[\e[1;32mY\e[0m/\e[1;31mN\e[0m]: "
@@ -67,8 +66,6 @@ if [[ "$CONFIRM" != "Y" && "$CONFIRM" != "y" ]]; then
   exit 0
 fi
 echo -e "\e[1;32m Continuing with Task 3...\e[0m"
-
-
 
 kubectl set image deployment/fortune-app-blue fortune-app=$REGION-docker.pkg.dev/qwiklabs-resources/spl-lab-apps/fortune-service:2.0.0
 kubectl set env deployment/fortune-app-blue APP_VERSION=2.0.0
@@ -82,7 +79,6 @@ kubectl set env deployment/fortune-app-blue APP_VERSION=2.0.0
 
 kubectl create -f deployments/fortune-app-canary.yaml
 
-
 #TASK 5
 kubectl apply -f services/fortune-app-blue-service.yaml
 kubectl create -f deployments/fortune-app-green.yaml
@@ -91,10 +87,11 @@ kubectl apply -f services/fortune-app-blue-service.yaml
 
 # Final message
 echo
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}║                   LAB COMPLETED SUCCESSFULLY!                    ║${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}Don't forget to Like, Share and Subscribe for more Videos${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📺 SUBSCRIBE TO EDULINKUP FOR MORE CLOUD LABS! 📺${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}🔗 https://www.youtube.com/@EduLinkUp${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}💡 Keep Learning, Keep Growing! 💡${RESET_FORMAT}"
 echo

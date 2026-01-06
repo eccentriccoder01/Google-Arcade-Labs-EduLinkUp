@@ -20,15 +20,16 @@ UNDERLINE_TEXT=$'\033[4m'
 clear
 
 # Welcome message
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}      SUBSCRIBE TECH & CODE- INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║                   EDULINKUP LAB AUTOMATION                       ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning Journey...            ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
+
 
 export REGION_1="${ZONE_1%-*}"
 
 export REGION="${ZONE_2%-*}"
-
 
 gcloud compute networks create cloud --subnet-mode custom
 
@@ -91,7 +92,6 @@ gcloud compute routes create on-prem-route1 --destination-range 10.0.1.0/24 \
 gcloud compute routes create cloud-route1 --destination-range 192.168.1.0/24 \
     --network cloud --next-hop-vpn-tunnel cloud-tunnel1 --next-hop-vpn-tunnel-region $REGION_1
 
-
 gcloud compute instances create "cloud-loadtest" --zone $ZONE_1 \
     --machine-type "e2-standard-4" --subnet "cloud-east" \
     --image-family "debian-11" --image-project "debian-cloud" --boot-disk-size "10" \
@@ -102,8 +102,6 @@ gcloud compute instances create "on-prem-loadtest" --zone $ZONE_2 \
     --image-family "debian-11" --image-project "debian-cloud" --boot-disk-size "10" \
     --boot-disk-type "pd-standard" --boot-disk-device-name "on-prem-loadtest"
 
-
-
 gcloud compute ssh --zone "$ZONE_2" "on-prem-loadtest" --project "$DEVSHELL_PROJECT_ID" --quiet --command "sudo apt-get install -y iperf && iperf -s -i 5" &
 
 sleep 10
@@ -112,10 +110,11 @@ gcloud compute ssh --zone "$ZONE_1" "cloud-loadtest" --project "$DEVSHELL_PROJEC
 
 # Final message
 echo
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}║                   LAB COMPLETED SUCCESSFULLY!                    ║${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}Don't forget to Like, Share and Subscribe for more Videos${RESET_FORMAT_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📺 SUBSCRIBE TO EDULINKUP FOR MORE CLOUD LABS! 📺${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}🔗 https://www.youtube.com/@EduLinkUp${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}💡 Keep Learning, Keep Growing! 💡${RESET_FORMAT}"
 echo

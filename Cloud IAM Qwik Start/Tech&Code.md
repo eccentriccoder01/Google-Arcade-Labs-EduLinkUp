@@ -24,7 +24,7 @@ sudo chmod +x EduLinkUp.sh
 
 ---
 
-## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
+## 🎉 **Congratulations! LAB COMPLETED SUCCESSFULLY!   ** 🏆  
 
 <div align="center" style="padding: 5px;">
   <h3>📱 Join the Tech & Code Community</h3>

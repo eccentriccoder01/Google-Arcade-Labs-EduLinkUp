@@ -20,11 +20,11 @@ UNDERLINE_TEXT=$'\033[4m'
 clear
 
 # Welcome message
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║                   EDULINKUP LAB AUTOMATION                       ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning Journey...            ║${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-
 
 
 bq mk ecommerce
@@ -39,15 +39,12 @@ productSKU,
 v2ProductName
 FROM \`data-to-insights.ecommerce.all_sessions_raw\`;
 
-
-
 #standardSQL
 # find the count of unique SKUs
 SELECT
 DISTINCT
 productSKU
 FROM \`data-to-insights.ecommerce.all_sessions_raw\`;
-
 
 SELECT
   v2ProductName,
@@ -59,7 +56,6 @@ FROM \`data-to-insights.ecommerce.all_sessions_raw\`
   HAVING SKU_count > 1
   ORDER BY SKU_count DESC;
 
-
 SELECT
   productSKU,
   COUNT(DISTINCT v2ProductName) AS product_count,
@@ -70,13 +66,11 @@ FROM \`data-to-insights.ecommerce.all_sessions_raw\`
   HAVING product_count > 1
   ORDER BY product_count DESC;
 
-
 SELECT DISTINCT
   v2ProductName,
   productSKU
 FROM \`data-to-insights.ecommerce.all_sessions_raw\`
 WHERE productSKU = 'GGOEGPJC019099';
-
 
 SELECT
   SKU,
@@ -84,7 +78,6 @@ SELECT
   stockLevel
 FROM \`data-to-insights.ecommerce.products\`
 WHERE SKU = 'GGOEGPJC019099';
-
 
 SELECT DISTINCT
   website.v2ProductName,
@@ -94,7 +87,6 @@ FROM \`data-to-insights.ecommerce.all_sessions_raw\` AS website
 JOIN \`data-to-insights.ecommerce.products\` AS inventory
   ON website.productSKU = inventory.SKU
   WHERE productSKU = 'GGOEGPJC019099';
-
 
 WITH inventory_per_sku AS (
   SELECT DISTINCT
@@ -113,14 +105,12 @@ SELECT
 FROM inventory_per_sku
 GROUP BY productSKU;
 
-
 SELECT
   productSKU,
   ARRAY_AGG(DISTINCT v2ProductName) AS push_all_names_into_array
 FROM \`data-to-insights.ecommerce.all_sessions_raw\`
 WHERE productSKU = 'GGOEGAAX0098'
 GROUP BY productSKU;
-
 
 SELECT
   productSKU,
@@ -129,14 +119,12 @@ FROM \`data-to-insights.ecommerce.all_sessions_raw\`
 WHERE productSKU = 'GGOEGAAX0098'
 GROUP BY productSKU;
 
-
 #standardSQL
 SELECT DISTINCT
 website.productSKU
 FROM \`data-to-insights.ecommerce.all_sessions_raw\` AS website
 JOIN \`data-to-insights.ecommerce.products\` AS inventory
 ON website.productSKU = inventory.SKU;
-
 
 #standardSQL
 # pull ID fields from both tables
@@ -148,7 +136,6 @@ JOIN \`data-to-insights.ecommerce.products\` AS inventory
 ON website.productSKU = inventory.SKU;
 # IDs are present in both tables, how can you dig deeper?
 
-
 #standardSQL
 # the secret is in the JOIN type
 # pull ID fields from both tables
@@ -158,7 +145,6 @@ inventory.SKU AS inventory_SKU
 FROM \`data-to-insights.ecommerce.all_sessions_raw\` AS website
 LEFT JOIN \`data-to-insights.ecommerce.products\` AS inventory
 ON website.productSKU = inventory.SKU;
-
 
 #standardSQL
 # find product SKUs in website table but not in product inventory table
@@ -170,13 +156,11 @@ LEFT JOIN \`data-to-insights.ecommerce.products\` AS inventory
 ON website.productSKU = inventory.SKU
 WHERE inventory.SKU IS NULL;
 
-
 #standardSQL
 # you can even pick one and confirm
 SELECT * FROM \`data-to-insights.ecommerce.products\`
 WHERE SKU = 'GGOEGATJ060517';
 # query returns zero results
-
 
 #standardSQL
 # reverse the join
@@ -189,7 +173,6 @@ RIGHT JOIN \`data-to-insights.ecommerce.products\` AS inventory
 ON website.productSKU = inventory.SKU
 WHERE website.productSKU IS NULL;
 
-
 #standardSQL
 # what are these products?
 # add more fields in the SELECT STATEMENT
@@ -201,7 +184,6 @@ RIGHT JOIN \`data-to-insights.ecommerce.products\` AS inventory
 ON website.productSKU = inventory.SKU
 WHERE website.productSKU IS NULL;
 
-
 #standardSQL
 SELECT DISTINCT
 website.productSKU AS website_SKU,
@@ -211,11 +193,9 @@ FULL JOIN \`data-to-insights.ecommerce.products\` AS inventory
 ON website.productSKU = inventory.SKU
 WHERE website.productSKU IS NULL OR inventory.SKU IS NULL;
 
-
 #standardSQL
 CREATE OR REPLACE TABLE ecommerce.site_wide_promotion AS
 SELECT .05 AS discount;
-
 
 SELECT DISTINCT
 productSKU,
@@ -224,7 +204,6 @@ discount
 FROM \`data-to-insights.ecommerce.all_sessions_raw\` AS website
 CROSS JOIN ecommerce.site_wide_promotion
 WHERE v2ProductCategory LIKE '%Clearance%';
-
 
 #standardSQL
 SELECT DISTINCT
@@ -237,12 +216,13 @@ WHERE v2ProductCategory LIKE '%Clearance%'
 AND productSKU = 'GGOEGOLC013299';
 "
 
-
 # Final message
 echo
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╔══════════════════════════════════════════════════════════════════╗${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}║                   LAB COMPLETED SUCCESSFULLY!                    ║${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📺 SUBSCRIBE TO EDULINKUP FOR MORE CLOUD LABS! 📺${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}🔗 https://www.youtube.com/@EduLinkUp${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}💡 Keep Learning, Keep Growing! 💡${RESET_FORMAT}"
 echo

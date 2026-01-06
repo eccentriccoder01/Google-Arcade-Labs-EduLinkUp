@@ -1,287 +1,217 @@
-# 🌐 Kickstarting Application Development with Gemini Code Assist: Challenge Lab || GSP527 🚀 [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.skills.google/focuses/132354?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=59224619)
+<div align="center">
 
-## ⚠️ Disclaimer ⚠️
+# Kickstarting Application Development with Gemini Code Assist: Challenge Lab
+### Google Cloud Skills Boost - Lab GSP527
 
-<blockquote style="background-color: #fffbea; border-left: 6px solid #f7c948; padding: 1em; font-size: 15px; line-height: 1.5;">
-  <strong>Educational Purpose Only:</strong> This script and guide are provided for the educational purposes to help you understand the lab services and boost your career. Before using the script, please open and review it to familiarize yourself with Google Cloud services.
-  <br><br>
-  <strong>Terms Compliance:</strong> Always ensure compliance with Qwiklabs' terms of service and YouTube's community guidelines. The aim is to enhance your learning experience — not to circumvent it.
-</blockquote>
-
----
-
-<div style="padding: 15px; margin: 10px 0;">
-
-## Task-2 `backend/index.test.ts`:
-
-```bash
-// Gemini: Write a test for the /outofstock endpoint to verify it returns a status 200 and a list of 2 items.
-```
-```bash
-cd cymbal-superstore/backend
-npm install
-npm run test
-```
-## Task-3 `backend/index.ts`:
-```bash
-// This endpoint should return all out-of-stock products.
-```
-```bash
-npm run test
-```
-## Task-4 `functions/index.js`:
-```bash
-const functions = require('@google-cloud/functions-framework');
-const {Firestore} = require('@google-cloud/firestore');
-
-// Create a Firestore client
-const firestore = new Firestore();
-
-// Create a Cloud Function that will be triggered by an HTTP request
-functions.http('newproducts', async (req, res) => {
-  // Get the products from Firestore
-  const products = await firestore.collection('inventory').where('timestamp', '>', new Date(Date.now() - 604800000)).get();
-
-  initFirestoreCollection();
-
-  // Create an array of products
-  const productsArray = [];
-  products.forEach((product) => {
-    const p = {
-      id: product.id,
-      name: product.data().name + ' (' + product.data().quantity + ')',
-      price: product.data().price,
-      quantity: product.data().quantity,
-      imgfile: product.data().imgfile,
-      timestamp: product.data().timestamp,
-      actualdateadded: product.data().actualdateadded,
-    };
-    productsArray.push(p);
-  });
-
-  // Send the products array to the client
-  res.set('Access-Control-Allow-Origin', '*');
-  res.send(productsArray);
-});
-
-// Create a Cloud Function for out-of-stock products
-functions.http('outofstock', async (req, res) => {
-  // Query Firestore for products with quantity 0 (out of stock)
-  const snapshot = await firestore.collection('inventory').where('quantity', '==', 0).get();
-  const outOfStock = [];
-  snapshot.forEach(doc => {
-    outOfStock.push({
-      id: doc.id,
-      name: doc.data().name,
-      price: doc.data().price,
-      quantity: doc.data().quantity,
-      imgfile: doc.data().imgfile,
-      timestamp: doc.data().timestamp,
-      actualdateadded: doc.data().actualdateadded
-    });
-  });
-  res.set('Access-Control-Allow-Origin', '*');
-  res.status(200).json(outOfStock);
-});
-
-// ------------------- ------------------- ------------------- ------------------- -------------------
-// HELPERS -- SEED THE INVENTORY DATABASE (PRODUCTS)
-// ------------------- ------------------- ------------------- ------------------- -------------------
-
-// This will overwrite products in the database - this is intentional, to keep the date-added fresh.
-function initFirestoreCollection() {
-  const oldProducts = [
-    "Apples",
-    "Bananas",
-    "Milk",
-    "Whole Wheat Bread",
-    "Eggs",
-    "Cheddar Cheese",
-    "Whole Chicken",
-    "Rice",
-    "Black Beans",
-    "Bottled Water",
-    "Apple Juice",
-    "Cola",
-    "Coffee Beans",
-    "Green Tea",
-    "Watermelon",
-    "Broccoli",
-    "Jasmine Rice",
-    "Yogurt",
-    "Beef",
-    "Shrimp",
-    "Walnuts",
-    "Sunflower Seeds",
-    "Fresh Basil",
-    "Cinnamon",
-  ];
-  // Add "old" products to Firestore
-  for (let i = 0; i < oldProducts.length; i++) {
-    const oldProduct = {
-      name: oldProducts[i],
-      price: Math.floor(Math.random() * 10) + 1,
-      quantity: Math.floor(Math.random() * 500) + 1,
-      imgfile: "product-images/" + oldProducts[i].replace(/\s/g, "").toLowerCase() + ".png",
-      timestamp: new Date(Date.now() - Math.floor(Math.random() * 31536000000) - 7776000000),
-      actualdateadded: new Date(Date.now()),
-    };
-    console.log("Adding (or updating) product in firestore: " + oldProduct.name);
-    addOrUpdateFirestore(oldProduct);
-  }
-  // Add recent products
-  const recentProducts = [
-    "Parmesan Crisps",
-    "Pineapple Kombucha",
-    "Maple Almond Butter",
-    "Mint Chocolate Cookies",
-    "White Chocolate Caramel Corn",
-    "Acai Smoothie Packs",
-    "Smores Cereal",
-    "Peanut Butter and Jelly Cups",
-  ];
-  for (let j = 0; j < recentProducts.length; j++) {
-    const recent = {
-      name: recentProducts[j],
-      price: Math.floor(Math.random() * 10) + 1,
-      quantity: Math.floor(Math.random() * 100) + 1,
-      imgfile: "product-images/" + recentProducts[j].replace(/\s/g, "").toLowerCase() + ".png",
-      timestamp: new Date(Date.now() - Math.floor(Math.random() * 518400000) + 1),
-      actualdateadded: new Date(Date.now()),
-    };
-    console.log("Adding (or updating) product in firestore: " + recent.name);
-    addOrUpdateFirestore(recent);
-  }
-  // Add recent products that are out of stock
-  const recentProductsOutOfStock = ["Wasabi Party Mix", "Jalapeno Seasoning"];
-  for (let k = 0; k < recentProductsOutOfStock.length; k++) {
-    const oosProduct = {
-      name: recentProductsOutOfStock[k],
-      price: Math.floor(Math.random() * 10) + 1,
-      quantity: 0,
-      imgfile: "product-images/" + recentProductsOutOfStock[k].replace(/\s/g, "").toLowerCase() + ".png",
-      timestamp: new Date(Date.now() - Math.floor(Math.random() * 518400000) + 1),
-      actualdateadded: new Date(Date.now()),
-    };
-    console.log("Adding (or updating) out of stock product in firestore: " + oosProduct.name);
-    addOrUpdateFirestore(oosProduct);
-  }
-}
-
-// Helper - add Firestore doc if not exists, otherwise update
-function addOrUpdateFirestore(product) {
-  firestore
-    .collection("inventory")
-    .where("name", "==", product.name)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        firestore.collection("inventory").add(product);
-      } else {
-        querySnapshot.forEach((doc) => {
-          firestore.collection("inventory").doc(doc.id).update(product);
-        });
-      }
-    });
-}
-//Subscribe to Tech & Code https://www.youtube.com/@TechCode9/videos 
-```
-```bash
-cd cymbal-superstore/functions
-```
-**⚠️Change `REGION` of below As per your lab Instruction**
-```bash
-gcloud functions deploy outofstock --runtime=nodejs20 --trigger-http --entry-point=outofstock --region=us-central1 --allow-unauthenticated
-```
-## Task-5 Create an `API Gateway` to expose the `outofstock Cloud Function`
-Step 1: Set Environment Variables
-```bash
-export CONFIG_ID=outofstock-api-config
-export API_ID=outofstock-api
-export GATEWAY_ID=store
-export OPENAPI_SPEC=outofstock.yaml
-```
-Step 2: Create the gateway Directory and OpenAPI Spec
-```bash
-mkdir gateway
-cd gateway
-touch outofstock.yaml
-```
-Step 3: Generate OpenAPI Specification
-```bash
-swagger: '2.0'
-info:
-  title: OutOfStock API
-  version: 1.0.0
-host: us-central1-yourproject.cloudfunctions.net
-schemes:
-  - https
-paths:
-  /outofstock:
-    get:
-      summary: Get out of stock products
-      operationId: outofstock
-      x-google-backend:
-        address: https://us-central1-yourproject.cloudfunctions.net/outofstock
-      responses:
-        '200':
-          description: Successful response
-          schema:
-            type: array
-            items:
-              type: object
-security: []  # This allows unauthenticated access; or replace with proper API key security
-```
-**⚠️Replace `REGION-PROJECT_ID` with your actual project ID**
-Step 4: Enable API Gateway Service
-```bash
-gcloud services enable apigateway.googleapis.com
-```
-Step 5: Create API and API Configuration
-```bash
-gcloud api-gateway apis create $API_ID --display-name="Out of Stock API"
-gcloud api-gateway api-configs create $CONFIG_ID --api=$API_ID --openapi-spec=outofstock.yaml --display-name="Out of Stock API Config"
-```
-Step 6: Create API Gateway & Verify and Test
-```bash
-gcloud api-gateway gateways create $GATEWAY_ID --api=$API_ID --api-config=$CONFIG_ID --location=us-central1
-gcloud api-gateway gateways describe $GATEWAY_ID --location=us-central1
-```
-**⚠️Change `LOCATION` of above As per your lab Instruction**
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/)
 
 </div>
 
 ---
 
-## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
+## 📋 Lab Overview
 
-<div style="text-align:center; padding: 10px 0; max-width: 640px; margin: 0 auto;">
-  <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 14px;">📱 Join the Tech & Code Community</h3>
+This lab walks you through the Google APIs Explorer, focusing on App Engine APIs. You'll learn how to interact with Google Cloud services programmatically and understand the API request/response cycle.
 
-  <a href="https://www.youtube.com/@TechCode9?sub_confirmation=1" style="margin: 0 6px; display: inline-block;">
-    <img src="https://img.shields.io/badge/Subscribe-Tech%20&%20Code-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Channel">
-  </a>
+```mermaid
+graph LR
+    A[Start Lab] --> B[Open APIs Explorer]
+    B --> C[Authenticate]
+    C --> D[Select App Engine API]
+    D --> E[Make API Calls]
+    E --> F[Analyze Responses]
+    F --> G[Complete Lab]
+    
+    style A fill:#4285F4,stroke:#1967D2,color:#fff
+    style G fill:#34A853,stroke:#188038,color:#fff
+    style C fill:#FBBC04,stroke:#F29900,color:#000
+```
 
-  <a href="https://www.linkedin.com/in/prateekrajput08/" style="margin: 0 6px; display: inline-block;">
-    <img src="https://img.shields.io/badge/LinkedIn-Prateek%20Rajput-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile">
-  </a>
+---
 
-  <a href="https://t.me/techcode9" style="margin: 0 6px; display: inline-block;">
-    <img src="https://img.shields.io/badge/Telegram-Tech%20Code-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Channel">
-  </a>
+## ⚡ Quick Start Guide
 
-  <a href="https://www.instagram.com/techcodefacilitator" style="margin: 0 6px; display: inline-block;">
-    <img src="https://img.shields.io/badge/Instagram-Tech%20Code-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Profile">
-  </a>
+Copy and paste the following commands into your Cloud Shell terminal:
+
+```bash
+curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Kickstarting%20Application%20Development%20with%20Gemini%20Code%20Assist-%20Challenge%20Lab/EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh 
+./EduLinkUp.sh
+```
+
+<div align="center">
+
+### Launch Sequence
+
+```mermaid
+graph LR
+    A[📋 Copy Commands] --> B[🖥️ Open Cloud Shell]
+    B --> C[📥 Download Script]
+    C --> D[🔓 Make Executable]
+    D --> E[▶️ Run Script]
+    E --> F[✅ Lab Complete]
+    
+    style A fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#000
+    style F fill:#C8E6C9,stroke:#388E3C,stroke-width:3px,color:#000
+```
+
+</div>
+
+> **Note:** The script automates repetitive setup tasks. We encourage you to review the script content to understand each step and learn the underlying Google Cloud operations.
+
+---
+
+## 🔐 Important Notice
+
+<div align="center">
+
+```mermaid
+graph LR
+    Start([Use This Resource?]) --> Question{What's Your Goal?}
+    Question -->|Learn & Understand| Manual[📚 Study the Code]
+    Question -->|Quick Review| Auto[⚡ Use Automation]
+    Question -->|Certification Prep| Both[🎯 Do Both]
+    
+    Manual --> Read[Read Script Line by Line]
+    Read --> Understand[Understand Each Command]
+    Understand --> Practice[Practice Manually First]
+    
+    Auto --> Review[Review Before Running]
+    Review --> Execute[Execute Script]
+    Execute --> Reflect[Reflect on Output]
+    
+    Both --> Manual
+    Both --> Auto
+    
+    Practice --> Success([✅ Deep Learning Achieved])
+    Reflect --> Success
+    
+    style Start fill:#E3F2FD,stroke:#1976D2,color:#000
+    style Success fill:#C8E6C9,stroke:#388E3C,color:#000
+    style Manual fill:#FFF3E0,stroke:#F57C00,color:#000
+    style Auto fill:#F3E5F5,stroke:#7B1FA2,color:#000
+    style Both fill:#E0F2F1,stroke:#00796B,color:#000
+```
+
+</div>
+
+<details>
+<summary><b> ⚠️ Disclaimer ⚠️ - 📖 Educational Use Policy (Expand)</b></summary>
+
+<br>
+
+**Purpose**  
+This repository provides learning resources to help you understand Google Cloud Platform services. The automation scripts are designed to demonstrate best practices and accelerate your learning journey.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Intended Use
+
+- Study and understand the underlying Google Cloud operations
+- Learn automation techniques for cloud infrastructure
+- Prepare for certification or professional development
+- Review concepts after manual completion
+
+</td>
+<td width="50%" valign="top">
+
+### 📜 Terms of Service
+
+- Comply with Google Cloud Skills Boost terms of service
+- Use scripts for educational purposes only
+- Complete manual labs first before using automation
+- Give proper attribution if sharing or modifying
+
+</td>
+</tr>
+</table>
+
+**Ethical Considerations**  
+We believe in learning through understanding. While our scripts save time, we strongly encourage you to:
+
+<div align="center">
+
+| Step | Action | Why It Matters |
+|------|--------|----------------|
+| 1️⃣ | Read through the script code | Understand what will happen |
+| 2️⃣ | Complete labs manually first | Build foundational knowledge |
+| 3️⃣ | Understand each command | Learn the "why" not just "how" |
+| 4️⃣ | Use automation as a tool | Reinforce learning, don't replace it |
+
+</div>
+
+</details>
+
+---
+
+## 🛠️ Troubleshooting
+
+<div align="center">
+
+```mermaid
+graph LR
+    Issue[❌ Encountered Issue?] --> Type{Issue Type}
+    
+    Type -->|Permission| P1[Check IAM Roles]
+    Type -->|API| A1[Verify API Enabled]
+    Type -->|Authentication| Auth1[Re-authenticate]
+    Type -->|Script| S1[Check Script Syntax]
+    
+    P1 --> P2[Add Required Permissions]
+    A1 --> A2[Enable in Console]
+    Auth1 --> Auth2[gcloud auth login]
+    S1 --> S2[Review Error Output]
+    
+    P2 --> Retry[🔄 Retry Operation]
+    A2 --> Retry
+    Auth2 --> Retry
+    S2 --> Retry
+    
+    Retry --> Success{Fixed?}
+    Success -->|Yes| Done([✅ Resolved])
+    Success -->|No| Help[📞 Seek Help]
+    
+    style Issue fill:#FFCDD2,stroke:#C62828,color:#000
+    style Done fill:#C8E6C9,stroke:#388E3C,color:#000
+    style Retry fill:#FFF9C4,stroke:#F9A825,color:#000
+    style Help fill:#E1BEE7,stroke:#8E24AA,color:#000
+```
+
+</div>
+
+---
+
+## **Join Our Growing Ecosystem**
+
+<div align="center">
+
+[![Website](https://img.shields.io/badge/🌍_Website-edulinkup.dev-6C63FF?style=for-the-badge&logoColor=white)](https://edulinkup.dev) [![LinkedIn](https://img.shields.io/badge/LinkedIn_Page-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/edulinkup) [![YouTube](https://img.shields.io/badge/YouTube_Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@EduLinkUp)
+
+---
+
+### 🌱 **Join the Developer Community**
+
+**Stay updated with everything happening in the EduLinkUp universe:**
+
+[![WhatsApp Community](https://img.shields.io/badge/WhatsApp_Community-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FriEJ8otpKVJux3H08SUhJ)
+
+---
+
+### 📩 **Let's Connect Personally**
+
+[![Personal LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eccentricexplorer)
+
 </div>
 
 ---
 
 <div align="center">
-  <p style="font-size: 12px; color: #586069;">
-    <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
-  </p>
-  <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: November 2025</em>
-  </p>
+
+*This guide was crafted with care to enhance your Google Cloud learning experience.*  
+*Remember: Understanding beats completion. Take your time and enjoy the journey.*
+
+<sub>Last updated: January 2026 | Version 1.0</sub>
+
 </div>
