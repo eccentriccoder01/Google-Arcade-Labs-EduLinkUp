@@ -39,29 +39,6 @@ sudo chmod +x EduLinkUp.sh
 ./EduLinkUp.sh
 ```
 
-<table>
-<tr>
-<td align="center" width="33%">
-
-**Step 1**  
-📥 Download Script
-
-</td>
-<td align="center" width="33%">
-
-**Step 2**  
-🔓 Set Permissions
-
-</td>
-<td align="center" width="33%">
-
-**Step 3**  
-▶️ Execute
-
-</td>
-</tr>
-</table>
-
 <div align="center">
 
 ### Launch Sequence
@@ -119,7 +96,7 @@ graph LR
 </div>
 
 <details>
-<summary><b>📖 Educational Use Policy</b></summary>
+<summary><b> ⚠️ Disclaimer ⚠️ - 📖 Educational Use Policy</b></summary>
 
 <br>
 
@@ -203,18 +180,6 @@ graph LR
 ```
 
 </div>
-
-<br>
-
-Having issues? Here are quick solutions:
-
-| Issue | Solution |
-|-------|----------|
-| Script won't run | Check execute permissions with `ls -la` |
-| Authentication errors | Verify you're logged into the correct project |
-| API not enabled | Enable the App Engine Admin API in console |
-| Timeout errors | Check your internet connection and retry |
-| Permission denied | Ensure your account has proper IAM roles |
 
 ---
 
