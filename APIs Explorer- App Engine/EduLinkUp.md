@@ -173,10 +173,10 @@ graph LR
     Success -->|Yes| Done([✅ Resolved])
     Success -->|No| Help[📞 Seek Help]
     
-    style Issue fill:#FFCDD2,stroke:#C62828
-    style Done fill:#C8E6C9,stroke:#388E3C
-    style Retry fill:#FFF9C4,stroke:#F9A825
-    style Help fill:#E1BEE7,stroke:#8E24AA
+    style Issue fill:#FFCDD2,stroke:#C62828,color:#000
+    style Done fill:#C8E6C9,stroke:#388E3C,color:#000
+    style Retry fill:#FFF9C4,stroke:#F9A825,color:#000
+    style Help fill:#E1BEE7,stroke:#8E24AA,color:#000
 ```
 
 </div>
