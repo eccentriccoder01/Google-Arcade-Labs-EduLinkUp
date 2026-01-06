@@ -31,24 +31,6 @@ graph LR
 
 ## ⚡ Quick Start Guide
 
-<div align="center">
-
-### Launch Sequence
-
-```mermaid
-graph TD
-    A[📋 Copy Commands] --> B[🖥️ Open Cloud Shell]
-    B --> C[📥 Download Script]
-    C --> D[🔓 Make Executable]
-    D --> E[▶️ Run Script]
-    E --> F[✅ Lab Complete]
-    
-    style A fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px
-    style F fill:#C8E6C9,stroke:#388E3C,stroke-width:3px
-```
-
-</div>
-
 Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
@@ -80,6 +62,24 @@ sudo chmod +x EduLinkUp.sh
 </tr>
 </table>
 
+<div align="center">
+
+### Launch Sequence
+
+```mermaid
+graph LR
+    A[📋 Copy Commands] --> B[🖥️ Open Cloud Shell]
+    B --> C[📥 Download Script]
+    C --> D[🔓 Make Executable]
+    D --> E[▶️ Run Script]
+    E --> F[✅ Lab Complete]
+    
+    style A fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#000
+    style F fill:#C8E6C9,stroke:#388E3C,stroke-width:3px,color:#000
+```
+
+</div>
+
 > **Note:** The script automates repetitive setup tasks. We encourage you to review the script content to understand each step and learn the underlying Google Cloud operations.
 
 ---
@@ -89,7 +89,7 @@ sudo chmod +x EduLinkUp.sh
 <div align="center">
 
 ```mermaid
-flowchart TD
+graph LR
     Start([Use This Resource?]) --> Question{What's Your Goal?}
     Question -->|Learn & Understand| Manual[📚 Study the Code]
     Question -->|Quick Review| Auto[⚡ Use Automation]
@@ -109,11 +109,11 @@ flowchart TD
     Practice --> Success([✅ Deep Learning Achieved])
     Reflect --> Success
     
-    style Start fill:#E3F2FD,stroke:#1976D2
-    style Success fill:#C8E6C9,stroke:#388E3C
-    style Manual fill:#FFF3E0,stroke:#F57C00
-    style Auto fill:#F3E5F5,stroke:#7B1FA2
-    style Both fill:#E0F2F1,stroke:#00796B
+    style Start fill:#E3F2FD,stroke:#1976D2,color:#000
+    style Success fill:#C8E6C9,stroke:#388E3C,color:#000
+    style Manual fill:#FFF3E0,stroke:#F57C00,color:#000
+    style Auto fill:#F3E5F5,stroke:#7B1FA2,color:#000
+    style Both fill:#E0F2F1,stroke:#00796B,color:#000
 ```
 
 </div>
