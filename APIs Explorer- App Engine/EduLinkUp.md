@@ -96,7 +96,7 @@ graph LR
 </div>
 
 <details>
-<summary><b> ⚠️ Disclaimer ⚠️ - 📖 Educational Use Policy</b></summary>
+<summary><b> ⚠️ Disclaimer ⚠️ - 📖 Educational Use Policy (Expand)</b></summary>
 
 <br>
 
