@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -66,7 +66,7 @@ gcloud config set compute/region "$region" >/dev/null
 PROJECT_ID=$(gcloud config get-value project 2>/dev/null)
 echo "${GREEN_TEXT}Using Project ID: $PROJECT_ID${RESET_FORMAT}"
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Tech & Code – Subscribe Here: https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}EduLinkUp – Subscribe Here: https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}Enabling Required API${RESET_FORMAT}"
 gcloud services enable networkconnectivity.googleapis.com
 
@@ -92,7 +92,7 @@ gcloud compute routers create "$on_prem_router_name" \
     --asn="$on_prem_router_asn"
 
 echo
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Watch more cloud tutorials on Tech & Code: https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}Watch more cloud tutorials on EduLinkUp: https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}Creating VPN Gateways${RESET_FORMAT}"
 
 routing_vpn_gateway_name="routing-vpc-vpn-gateway"
@@ -184,7 +184,7 @@ gcloud compute routers update-bgp-peer "$on_prem_router_name" \
     --region="$region"
 
 echo
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Support the channel: Tech & Code – https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}Support the channel: EduLinkUp – https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}Creating NCC Hub and Spokes${RESET_FORMAT}"
 
 hub_name="mesh-hub"

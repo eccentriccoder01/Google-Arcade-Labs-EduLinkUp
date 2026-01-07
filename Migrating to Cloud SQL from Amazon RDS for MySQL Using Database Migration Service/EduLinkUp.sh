@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -128,7 +128,7 @@ gcloud database-migration connection-profiles list --region=$REGION
 
 echo "${GREEN_TEXT}Setup and connection profile creation completed successfully.${RESET_TEXT}"
 
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo "${GREEN_TEXT}${BOLD_TEXT}Don't forget to Like, Share and Subscribe for more Videos${RESET_FORMAT}"
 echo
 

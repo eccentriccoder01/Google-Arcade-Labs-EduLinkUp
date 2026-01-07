@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -40,7 +40,7 @@ for id in "${!PORTFOLIOS[@]}"; do
         --instance=banking-ops-instance \
         --sql="INSERT INTO Portfolio (PortfolioId, Name, ShortName, PortfolioInfo) VALUES ($id, '$name', '$short', '$info')"
 done
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo ""
 
 declare -A CATEGORIES=(
@@ -57,7 +57,7 @@ for id in "${!CATEGORIES[@]}"; do
         --instance=banking-ops-instance \
         --sql="INSERT INTO Category (CategoryId, PortfolioId, CategoryName) VALUES ($id, $portfolio_id, '$name')"
 done
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo ""
 
 declare -A PRODUCTS=(
@@ -79,7 +79,7 @@ for id in "${!PRODUCTS[@]}"; do
         --instance=banking-ops-instance \
         --sql="INSERT INTO Product (ProductId, CategoryId, PortfolioId, ProductName, ProductAssetCode, ProductClass) VALUES ($id, $category_id, $portfolio_id, '$name', '$code', '$class')"
 done
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo ""
 
 mkdir -p python-helper && cd python-helper || {

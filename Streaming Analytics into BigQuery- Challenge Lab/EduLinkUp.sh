@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -122,14 +122,14 @@ done
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}Starting Another Dataflow Job${RESET_FORMAT}"
 echo
-gcloud dataflow jobs run $JOB-techcode --gcs-location gs://dataflow-templates-$REGION/latest/PubSub_to_BigQuery --region=$REGION --project=$PROJECT_ID --staging-location gs://$PROJECT_ID/temp --parameters inputTopic=projects/$PROJECT_ID/topics/$TOPIC,outputTableSpec=$PROJECT_ID:$DATASET.$TABLE
+gcloud dataflow jobs run $JOB-EduLinkUp --gcs-location gs://dataflow-templates-$REGION/latest/PubSub_to_BigQuery --region=$REGION --project=$PROJECT_ID --staging-location gs://$PROJECT_ID/temp --parameters inputTopic=projects/$PROJECT_ID/topics/$TOPIC,outputTableSpec=$PROJECT_ID:$DATASET.$TABLE
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}Monitoring and Interacting with Second Dataflow Job${RESET_FORMAT}"
 echo
 
 while true; do
-    STATUS=$(gcloud dataflow jobs list --region=$REGION --project=$PROJECT_ID --filter="name:$JOB-techcode AND state:Running" --format="value(state)")
+    STATUS=$(gcloud dataflow jobs list --region=$REGION --project=$PROJECT_ID --filter="name:$JOB-EduLinkUp AND state:Running" --format="value(state)")
     
     if [ "$STATUS" == "Running" ]; then
         echo "The Dataflow job is running successfully"
@@ -150,7 +150,7 @@ echo "${CYAN_TEXT}${BOLD_TEXT}==================================================
 echo "${CYAN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!                 ${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
 echo
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo "${GREEN_TEXT}${BOLD_TEXT}Don't forget to Like, Share and Subscribe for more Videos${RESET_FORMAT}"
 
 # Final message

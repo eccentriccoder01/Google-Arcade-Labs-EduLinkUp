@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -222,8 +222,8 @@ echo "${PINK_TEXT}${BOLD_TEXT}https://console.cloud.google.com/security/iap?proj
 echo
 
 echo
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Subscribe to Tech & Code for more! 👇${RESET_FORMAT}"
-echo "${PINK_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}Subscribe to EduLinkUp for more! 👇${RESET_FORMAT}"
+echo "${PINK_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo
 
 # Final message

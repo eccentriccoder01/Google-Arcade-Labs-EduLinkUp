@@ -1,4 +1,4 @@
-
+﻿
 #!/bin/bash
 BLACK_TEXT=$'\033[0;90m'
 RED_TEXT=$'\033[0;91m'
@@ -23,7 +23,7 @@ REVERSE_TEXT=$'\033[7m'
 clear
 # Welcome message
 echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}      SUBSCRIBE TECH & CODE- INITIATING EXECUTION...  ${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}      SUBSCRIBE EduLinkUp- INITIATING EXECUTION...  ${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
 echo
 

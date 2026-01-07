@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -44,7 +44,7 @@ gsutil cp create_table.sql \
 
 gcloud sql instances create flights \
     --database-version=POSTGRES_13 --cpu=2 --memory=8GiB \
-    --region=$REGION --root-password=techcode
+    --region=$REGION --root-password=EduLinkUp
 
 export ADDRESS=$(curl -s http://ipecho.net/plain)/32
 

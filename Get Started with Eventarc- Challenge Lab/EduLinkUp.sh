@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -77,7 +77,7 @@ echo
 # Test Message
 echo "${YELLOW_TEXT}Sending test message to Pub/Sub topic...${RESET_FORMAT}"
 gcloud pubsub topics publish "$DEVSHELL_PROJECT_ID-topic" \
-  --message="Subscribe to TechCode9"
+  --message="Subscribe to EduLinkUp9"
 echo
 
 # Final message

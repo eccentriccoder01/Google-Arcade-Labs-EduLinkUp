@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -63,7 +63,7 @@ gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
 
 # Completion message
 echo -e "${RED_TEXT}${BOLD_TEXT}LAB COMPLETED SUCCESSFULLY!   ${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo
 
 # Final message

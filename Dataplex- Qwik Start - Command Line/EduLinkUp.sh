@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -30,7 +30,7 @@ echo
 gcloud services enable \
   dataplex.googleapis.com --project=$DEVSHELL_PROJECT_ID
 
-gcloud dataplex lakes create ecommerce --location=$REGION --display-name="Ecommerce" --description="subscribe to techcode"
+gcloud dataplex lakes create ecommerce --location=$REGION --display-name="Ecommerce" --description="subscribe to EduLinkUp"
 
 gcloud dataplex zones create orders-curated-zone --location=$REGION --lake=ecommerce --display-name="Orders Curated Zone" --resource-location-type=SINGLE_REGION --type=CURATED --discovery-enabled --discovery-schedule="0 * * * *"
 

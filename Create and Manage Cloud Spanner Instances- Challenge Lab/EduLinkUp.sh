@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -36,7 +36,7 @@ REVERSE_TEXT=$'\033[7m'
 echo "${YELLOW_TEXT}${BOLD_TEXT}Creating Spanner instance: banking-ops-instance${RESET_FORMAT}"
 gcloud spanner instances create banking-ops-instance \
   --config=regional-$REGION \
-  --description="TechCode" \
+  --description="EduLinkUp" \
   --nodes=1
 
 # Create database
@@ -143,8 +143,8 @@ gsutil mb gs://$DEVSHELL_PROJECT_ID
 
 # Create placeholder file
 echo "${YELLOW_TEXT}${BOLD_TEXT}Creating placeholder files${RESET_FORMAT}"
-touch techcode
-gsutil cp techcode gs://$DEVSHELL_PROJECT_ID/tmp/techcode
+touch EduLinkUp
+gsutil cp EduLinkUp gs://$DEVSHELL_PROJECT_ID/tmp/techcode
 
 # Upload files to GCS
 echo "${YELLOW_TEXT}${BOLD_TEXT}Uploading files to Cloud Storage${RESET_FORMAT}"
@@ -157,7 +157,7 @@ sleep 100
 
 # Run Dataflow job
 echo "${YELLOW_TEXT}${BOLD_TEXT}Running Dataflow import job${RESET_FORMAT}"
-gcloud dataflow jobs run techcode \
+gcloud dataflow jobs run EduLinkUp \
   --gcs-location gs://dataflow-templates-"$REGION"/latest/GCS_Text_to_Cloud_Spanner \
   --region="$REGION" \
   --staging-location gs://$DEVSHELL_PROJECT_ID/tmp/ \

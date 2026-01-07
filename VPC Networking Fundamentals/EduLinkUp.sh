@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -110,7 +110,7 @@ echo "${PINK_TEXT}${BOLD_TEXT}╔═══════════════�
 echo "${PINK_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!                  ${RESET_FORMAT}"
 echo "${PINK_TEXT}${BOLD_TEXT}╚════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
-echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe our Channel:${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe our Channel:${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo
 
 # Final message

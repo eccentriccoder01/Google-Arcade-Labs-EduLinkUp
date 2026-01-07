@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -28,8 +28,8 @@ echo
 
 
 # ---------------------------------------------------------
-#   Tech & Code - Guaranteed Working Script for Challenge Lab
-#   YouTube: https://www.youtube.com/@TechCode93
+#   EduLinkUp - Guaranteed Working Script for Challenge Lab
+#   YouTube: https://www.youtube.com/@EduLinkUp93
 # ---------------------------------------------------------
 
 REGION="us-central1"
@@ -137,8 +137,8 @@ echo " ALL TASKS COMPLETED SUCCESSFULLY!"
 echo " Bucket: $BUCKET_NAME"
 echo " Cloud Storage Function: cs-tracker"
 echo " HTTP Function: http-messenger"
-echo " Subscribe: Tech & Code 🔥"
-echo " https://www.youtube.com/@TechCode93"
+echo " Subscribe: EduLinkUp 🔥"
+echo " https://www.youtube.com/@EduLinkUp93"
 echo "===================================================="
 
 # Final message

@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -57,7 +57,7 @@ pause_for_yes() {
 
 # ========================= WELCOME MESSAGE =========================
 echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}      SUBSCRIBE TECH & CODE- INITIATING EXECUTION...  ${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}      SUBSCRIBE EduLinkUp- INITIATING EXECUTION...  ${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
 echo
 
@@ -65,8 +65,8 @@ echo
 PROJECT_ID=$(gcloud config get-value project 2>/dev/null)
 ZONE=$(gcloud compute zones list --limit=1 --format="value(name)")
 
-INSTANCE_NAME="techcode-vm"
-DISK_NAME="techcode-disk"
+INSTANCE_NAME="EduLinkUp-vm"
+DISK_NAME="EduLinkUp-disk"
 
 # ========================= VALIDATION =========================
 if [[ -z "$PROJECT_ID" || -z "$ZONE" || -z "$INSTANCE_NAME" || -z "$DISK_NAME" ]]; then
@@ -110,7 +110,7 @@ echo "${GREEN_TEXT}${BOLD_TEXT}=================================================
 echo "${GREEN_TEXT}${BOLD_TEXT}              ALL TASKS COMPLETED SUCCESSFULLY          ${RESET_FORMAT}"
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
 echo
-echo "${CYAN_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${CYAN_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo "${CYAN_TEXT}Don't forget to Like, Share and Subscribe for more Videos${RESET_FORMAT}"
 
 # Final message

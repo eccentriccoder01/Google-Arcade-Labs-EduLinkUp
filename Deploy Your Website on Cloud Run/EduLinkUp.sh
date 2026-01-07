@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -138,8 +138,8 @@ echo "${PINK_TEXT}${BOLD_TEXT}   Service name: monolith, Region: ${WHITE_TEXT}${
 gcloud run deploy monolith --image $REGION-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/monolith-demo/monolith:2.0.0 --allow-unauthenticated --region $REGION
 
 echo
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Subscribe to Tech & Code for more! 👇${RESET_FORMAT}"
-echo "${BLUE_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}Subscribe to EduLinkUp for more! 👇${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@EduLinkUp9${RESET_FORMAT}"
 echo
 
 # Final message

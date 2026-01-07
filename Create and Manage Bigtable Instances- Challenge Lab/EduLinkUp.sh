@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # Define color variables
 BLACK_TEXT=$'\033[0;90m'
@@ -82,7 +82,7 @@ while true; do
         echo -e "\033[1;33mJob has completed successfully. now just wait for succeeded\033[0m \033[1;34m\033[0m"
         break
     else
-        echo -e "\033[1;33mJob retrying. Like Share and Subscribe to TechCode\033[0m \033[1;34m\033[0m"
+        echo -e "\033[1;33mJob retrying. Like Share and Subscribe to EduLinkUp\033[0m \033[1;34m\033[0m"
         sleep 10
     fi
 done
@@ -100,7 +100,7 @@ while true; do
         echo -e "\033[1;33mJob has completed successfully. now just wait for succeeded\033[0m \033[1;34m\033[0m"
         break
     else
-        echo -e "\033[1;33mJob retrying. Like Share and Subscribe to TechCode\033[0m \033[1;34m\033[0m"
+        echo -e "\033[1;33mJob retrying. Like Share and Subscribe to EduLinkUp\033[0m \033[1;34m\033[0m"
         sleep 10
     fi
 done
