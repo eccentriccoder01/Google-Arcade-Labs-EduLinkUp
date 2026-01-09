@@ -103,7 +103,7 @@ javascript:(function () {
 <div style="text-align:center; padding: 10px 0; max-width: 640px; margin: 0 auto;">
   <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 14px;">📱 Join the Tech & Code Community</h3>
 
-  <a href="https://www.youtube.com/@TechCode9?sub_confirmation=1" style="margin: 0 6px; display: inline-block;">
+  <a href="https://www.youtube.com/@EduLinkUp9?sub_confirmation=1" style="margin: 0 6px; display: inline-block;">
     <img src="https://img.shields.io/badge/Subscribe-Tech%20&%20Code-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Channel">
   </a>
 
@@ -111,11 +111,11 @@ javascript:(function () {
     <img src="https://img.shields.io/badge/LinkedIn-Prateek%20Rajput-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile">
   </a>
 
-  <a href="https://t.me/techcode9" style="margin: 0 6px; display: inline-block;">
+  <a href="https://t.me/edulinkup" style="margin: 0 6px; display: inline-block;">
     <img src="https://img.shields.io/badge/Telegram-Tech%20Code-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Channel">
   </a>
 
-  <a href="https://www.instagram.com/techcodefacilitator" style="margin: 0 6px; display: inline-block;">
+  <a href="https://www.instagram.com/edulinkup2026" style="margin: 0 6px; display: inline-block;">
     <img src="https://img.shields.io/badge/Instagram-Tech%20Code-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Profile">
   </a>
 </div>

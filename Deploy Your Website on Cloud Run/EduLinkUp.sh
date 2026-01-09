@@ -73,7 +73,7 @@ cd ~/monolith-to-microservices/monolith
 echo
 echo "${YELLOW_TEXT}${BOLD_TEXT}📦 Creating a new Artifact Registry Docker repository named 'monolith-demo'...${RESET_FORMAT}"
 echo "${YELLOW_TEXT}${BOLD_TEXT}   This will be located in region: ${WHITE_TEXT}${REGION}${RESET_FORMAT}"
-gcloud artifacts repositories create monolith-demo --location=$REGION --repository-format=docker --description="Subscribe to techcps" 
+gcloud artifacts repositories create monolith-demo --location=$REGION --repository-format=docker --description="Subscribe to edulinkup" 
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}🔑 Configuring Docker to authenticate with Artifact Registry in region: ${WHITE_TEXT}${REGION}${RESET_FORMAT}"

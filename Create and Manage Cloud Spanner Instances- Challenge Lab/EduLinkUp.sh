@@ -144,7 +144,7 @@ gsutil mb gs://$DEVSHELL_PROJECT_ID
 # Create placeholder file
 echo "${YELLOW_TEXT}${BOLD_TEXT}Creating placeholder files${RESET_FORMAT}"
 touch EduLinkUp
-gsutil cp EduLinkUp gs://$DEVSHELL_PROJECT_ID/tmp/techcode
+gsutil cp EduLinkUp gs://$DEVSHELL_PROJECT_ID/tmp/edulinkup
 
 # Upload files to GCS
 echo "${YELLOW_TEXT}${BOLD_TEXT}Uploading files to Cloud Storage${RESET_FORMAT}"

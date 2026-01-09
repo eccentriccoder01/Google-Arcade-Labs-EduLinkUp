@@ -1724,7 +1724,7 @@ resource "google_compute_network" "privatenet" {
 # Create privatesubnet-us subnetwork
 resource "google_compute_subnetwork" "privatesubnet-us" {
   name          = "privatesubnet-us"
-  region        = "$REGION"  # please like share & subscribe to techcps
+  region        = "$REGION"  # please like share & subscribe to edulinkup
   network       = google_compute_network.privatenet.self_link
   ip_cidr_range = "172.16.0.0/24"
 }

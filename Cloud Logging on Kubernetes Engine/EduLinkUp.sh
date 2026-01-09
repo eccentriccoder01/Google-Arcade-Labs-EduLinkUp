@@ -104,7 +104,7 @@ gcloud logging read "resource.type=k8s_container AND resource.labels.cluster_nam
 
 # ========================= CREATE LOGGING SINK =========================
 echo "${MAROON_TEXT}${BOLD_TEXT}Creating BigQuery logging sink...${RESET_FORMAT}"
-gcloud logging sinks create techcps \
+gcloud logging sinks create edulinkup \
   bigquery.googleapis.com/projects/$PROJECT_ID/datasets/bq_logs \
   --log-filter='resource.type="k8s_container" resource.labels.cluster_name="stackdriver-logging"' \
   --include-children \

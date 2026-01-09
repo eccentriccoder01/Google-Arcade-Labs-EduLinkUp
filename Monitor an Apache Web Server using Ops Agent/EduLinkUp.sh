@@ -92,8 +92,8 @@ gcloud compute ssh quickstart-vm --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --q
 cat > cp-channel.json <<EOF_CP
 {
   "type": "pubsub",
-  "displayName": "techcps",
-  "description": "subscribe to techcps",
+  "displayName": "edulinkup",
+  "description": "subscribe to edulinkup",
   "labels": {
     "topic": "projects/$DEVSHELL_PROJECT_ID/topics/notificationTopic"
   }
