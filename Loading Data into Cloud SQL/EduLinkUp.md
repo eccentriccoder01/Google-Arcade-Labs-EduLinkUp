@@ -3,7 +3,7 @@
 # Loading Data into Cloud SQL
 ### Google Cloud Skills Boost - Lab GSP196
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6466/labs/40657)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/996)
 
 </div>
 

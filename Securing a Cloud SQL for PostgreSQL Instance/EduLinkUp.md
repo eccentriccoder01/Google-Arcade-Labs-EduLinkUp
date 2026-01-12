@@ -3,7 +3,7 @@
 # Securing a Cloud SQL for PostgreSQL Instance
 ### Google Cloud Skills Boost - Lab GSP920
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6482/labs/40745)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/4200)
 
 </div>
 

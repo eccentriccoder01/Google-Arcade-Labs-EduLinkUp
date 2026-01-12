@@ -3,7 +3,7 @@
 # Troubleshooting Data Models in Looker
 ### Google Cloud Skills Boost - Lab GSP1019
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6550/labs/41051)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/4745)
 
 </div>
 

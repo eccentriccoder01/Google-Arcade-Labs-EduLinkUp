@@ -3,7 +3,7 @@
 # Using Specialized Processors with Document AI (Python)
 ### Google Cloud Skills Boost - Lab GSP1140
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6467/labs/40668)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/6462)
 
 </div>
 

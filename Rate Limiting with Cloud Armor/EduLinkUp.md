@@ -3,7 +3,7 @@
 # Rate Limiting with Cloud Armor
 ### Google Cloud Skills Boost - Lab GSP975
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6189/labs/39266)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/4106)
 
 </div>
 

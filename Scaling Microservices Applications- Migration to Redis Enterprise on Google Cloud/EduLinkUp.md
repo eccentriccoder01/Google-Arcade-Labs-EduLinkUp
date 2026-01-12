@@ -3,7 +3,7 @@
 # Scaling Microservices Applications: Migration to Redis Enterprise on Google Cloud
 ### Google Cloud Skills Boost - Lab GSP1177
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6512/labs/40877)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](hhttps://www.skills.google/catalog_lab/11440)
 
 </div>
 

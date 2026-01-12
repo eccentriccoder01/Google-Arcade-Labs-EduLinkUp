@@ -3,7 +3,7 @@
 # Web Security Scanner: Qwik Start
 ### Google Cloud Skills Boost - Lab GSP112
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6463/labs/40621)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/1066)
 
 </div>
 

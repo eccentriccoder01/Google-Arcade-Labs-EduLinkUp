@@ -3,7 +3,7 @@
 # Workload Manager Validation for SQL Server
 ### Google Cloud Skills Boost - Lab GSP1182
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/)
+[![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.skills.google/focuses/80974?parent=catalog)
 
 </div>
 
