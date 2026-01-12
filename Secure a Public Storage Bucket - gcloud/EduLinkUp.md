@@ -1,7 +1,7 @@
 <div align="center">
 
 # Secure a Public Storage Bucket - gcloud ||  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.cloudskillsboost.google/games/6559/labs/41150)
-### Google Cloud Skills Boost - Lab GSP000
+### Google Cloud Skills Boost
 
 [![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6559/labs/41150)
 

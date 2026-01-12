@@ -1,7 +1,7 @@
 <div align="center">
 
 # Get Started with Eventarc: Challenge Lab || ARC118  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.skills.google/course_templates/727/labs/587168)
-### Google Cloud Skills Boost - Lab GSP000
+### Google Cloud Skills Boost - Lab ARC118
 
 [![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/)
 

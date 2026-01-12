@@ -1,7 +1,7 @@
 <div align="center">
 
 # Arcade Hero: Building Blocks Cloud Run functions IV
-### Google Cloud Skills Boost - Lab GSP1223
+### Google Cloud Skills Boost - Lab ARC1223
 
 [![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6554/labs/41116)
 

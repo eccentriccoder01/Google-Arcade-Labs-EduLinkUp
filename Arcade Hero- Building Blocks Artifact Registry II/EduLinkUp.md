@@ -1,7 +1,7 @@
 <div align="center">
 
 # Arcade Hero- Building Blocks Artifact Registry II
-### Google Cloud Skills Boost - Lab GSPXXX
+### Google Cloud Skills Boost - Lab arc1208
 
 [![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6154/labs/39075)
 
