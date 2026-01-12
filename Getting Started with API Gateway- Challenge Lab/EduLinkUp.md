@@ -1,7 +1,7 @@
 <div align="center">
 
 # Getting Started with API Gateway: Challenge Lab || ARC109  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.skills.google/course_templates/662/labs/592577)
-### Google Cloud Skills Boost - Lab GSP000
+### Google Cloud Skills Boost - Lab ARC109
 
 [![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/)
 

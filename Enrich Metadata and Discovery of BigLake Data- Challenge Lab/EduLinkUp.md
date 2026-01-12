@@ -1,9 +1,10 @@
 <div align="center">
 
-# Enrich Metadata and Discovery of BigLake Data: Challenge Lab || ARC123  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.skills.google/focuses/64167?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=60447992)
-### Google Cloud Skills Boost - Lab GSP000
+# Enrich Metadata and Discovery of BigLake Data: Challenge Lab || ARC123  
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/)
+### Google Cloud Skills Boost - Lab ARC123
+
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/focuses/64167)
 
 </div>
 
