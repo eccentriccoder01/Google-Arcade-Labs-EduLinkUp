@@ -1,9 +1,9 @@
 <div align="center">
 
-# Get Started with Looker: Challenge Lab || ARC107  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.cloudskillsboost.google/course_templates/647/labs/461643)
+# Get Started with Looker: Challenge Lab || ARC107  [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.skills.google/catalog_lab/6266)
 ### Google Cloud Skills Boost - Lab ARC107
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/course_templates/647/labs/461643)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/6266)
 
 </div>
 
@@ -11,7 +11,7 @@
 
 ## 📋 Lab Overview
 
-This challenge lab tests your skills in Get Started with Looker:  || ARC107  [![Open Lab](https: //img.shields.io/badge/OpenLabblue?style=flat)](https: //www.cloudskillsboost.google/course_templates/647/labs/461643). You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
+This challenge lab tests your skills in Get Started with Looker: || ARC107. You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
 
 ```mermaid
 graph LR
