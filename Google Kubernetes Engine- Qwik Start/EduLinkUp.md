@@ -3,7 +3,7 @@
 # Google Kubernetes Engine: Qwik Start
 ### Google Cloud Skills Boost - Lab GSP100
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6550/labs/41049)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/911)
 
 </div>
 

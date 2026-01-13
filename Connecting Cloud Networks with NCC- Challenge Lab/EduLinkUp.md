@@ -3,7 +3,7 @@
 # Connecting Cloud Networks with NCC: Challenge Lab
 ### Google Cloud Skills Boost - Lab GSP528
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/course_templates/1364/labs/582994)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/32344)
 
 </div>
 

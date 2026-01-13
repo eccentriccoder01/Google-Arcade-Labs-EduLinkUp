@@ -3,7 +3,7 @@
 # Create and Manage AlloyDB Instances: Challenge Lab
 ### Google Cloud Skills Boost - Lab GSP395
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/course_templates/642/labs/557016)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/5262)
 
 </div>
 

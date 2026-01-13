@@ -3,7 +3,7 @@
 # Cloud SQL for MySQL: Qwik Start
 ### Google Cloud Skills Boost - Lab GSP151
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6466/labs/40655)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/925)
 
 </div>
 

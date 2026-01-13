@@ -3,7 +3,7 @@
 # Monitor an Apache Web Server using Ops Agent
 ### Google Cloud Skills Boost - Lab GSP1108
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6463/labs/40622)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/5878)
 
 </div>
 

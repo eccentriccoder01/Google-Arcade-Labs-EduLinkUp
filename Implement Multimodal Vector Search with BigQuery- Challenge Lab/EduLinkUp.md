@@ -3,7 +3,7 @@
 # Implement Multimodal Vector Search with BigQuery: Challenge Lab
 ### Google Cloud Skills Boost - Lab GSP523
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/course_templates/1232/labs/550617)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/31938)
 
 </div>
 

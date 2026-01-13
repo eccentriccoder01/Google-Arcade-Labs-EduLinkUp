@@ -1,9 +1,9 @@
 <div align="center">
 
-# Get Started with Cloud Storage: Challenge Lab || ARC111  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.skills.google/focuses/62706?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=60867493)
+# Get Started with Cloud Storage: Challenge Lab || ARC111  [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.skills.google/catalog_lab/6308)
 ### Google Cloud Skills Boost - Lab ARC111
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/6308)
 
 </div>
 
@@ -11,7 +11,7 @@
 
 ## 📋 Lab Overview
 
-This challenge lab tests your skills in Get Started with Cloud Storage:  || ARC111  [![Open Lab](https: //img.shields.io/badge/OpenLabblue?style=flat)](https: //www.skills.google/focuses/62706?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=60867493). You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
+This challenge lab tests your skills in Get Started with Cloud Storage: || ARC111. You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
 
 ```mermaid
 graph LR

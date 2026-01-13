@@ -1,9 +1,9 @@
 <div align="center">
 
-# Getting Started with API Gateway: Challenge Lab || ARC109  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.skills.google/course_templates/662/labs/592577)
+# Getting Started with API Gateway: Challenge Lab || ARC109  [![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.skills.google/catalog_lab/6267)
 ### Google Cloud Skills Boost - Lab ARC109
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/6267)
 
 </div>
 
@@ -11,7 +11,7 @@
 
 ## 📋 Lab Overview
 
-This challenge lab tests your skills in Getting Started with API Gateway:  || ARC109  [![Open Lab](https: //img.shields.io/badge/OpenLabblue?style=flat)](https: //www.skills.google/course_templates/662/labs/592577). You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
+This challenge lab tests your skills in Getting Started with API Gateway: || ARC109. You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
 
 ```mermaid
 graph LR

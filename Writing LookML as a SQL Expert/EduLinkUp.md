@@ -3,7 +3,7 @@
 # Writing LookML as a SQL Expert
 ### Google Cloud Skills Boost - Lab GSP1332
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/)
+[![Open Lab](https://img.shields.io/badge/Open-Lab-blue?style=flat)](https://www.skills.google/catalog_lab/32492)
 
 </div>
 
@@ -29,169 +29,252 @@ graph LR
 
 ---
 
-## ⚡ Quick Start Guide
-
-Copy and paste the following commands into your Cloud Shell terminal:
+## Create View `order_items`
 
 ```bash
-curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Writing%20LookML%20as%20a%20SQL%20Expert/EduLinkUp.sh
-sudo chmod +x EduLinkUp.sh 
-./EduLinkUp.sh
+view: order_items {
+  sql_table_name: `cloud-training-demos.thelook_ecommerce.order_items` ;;
+  drill_fields: [id]
+
+  # ---------------------------
+  # PRIMARY KEY
+  # ---------------------------
+  dimension: id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
+  # ---------------------------
+  # DATE DIMENSION GROUPS
+  # ---------------------------
+  dimension_group: created {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.created_at ;;
+  }
+
+  dimension_group: delivered {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.delivered_at ;;
+  }
+
+  dimension_group: returned {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.returned_at ;;
+  }
+
+  dimension_group: shipped {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.shipped_at ;;
+  }
+
+  # ---------------------------
+  # OTHER DIMENSIONS
+  # ---------------------------
+  dimension: inventory_item_id {
+    type: number
+    sql: ${TABLE}.inventory_item_id ;;
+  }
+
+  dimension: order_id {
+    type: number
+    sql: ${TABLE}.order_id ;;
+  }
+
+  dimension: product_id {
+    type: number
+    sql: ${TABLE}.product_id ;;
+  }
+
+  dimension: user_id {
+    type: number
+    sql: ${TABLE}.user_id ;;
+  }
+
+  dimension: sale_price {
+    type: number
+    sql: ${TABLE}.sale_price ;;
+  }
+
+  dimension: status {
+    type: string
+    sql: ${TABLE}.status ;;
+  }
+
+  # ---------------------------
+  # MEASURES
+  # ---------------------------
+  measure: count {
+    label: "# of Order Items"
+    type: count
+    drill_fields: [id]
+  }
+
+  measure: total_sale_price {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd
+  }
+
+  measure: customer_dividends {
+    description: "Customers receive 10% of their total sales as a gift card for future purchases."
+    type: number
+    sql: 0.1 * ${total_sale_price} ;;
+    value_format_name: usd
+  }
+}
 ```
 
-<div align="center">
+## Open:  `qwiklabs-looker.model`
+```bash
+explore: order_items {
+  label: "Ordered Items"
 
-### Launch Sequence
-
-```mermaid
-graph LR
-    A[📋 Copy Commands] --> B[🖥️ Open Cloud Shell]
-    B --> C[📥 Download Script]
-    C --> D[🔓 Make Executable]
-    D --> E[▶️ Run Script]
-    E --> F[✅ Lab Complete]
-    
-    style A fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#000
-    style F fill:#C8E6C9,stroke:#388E3C,stroke-width:3px,color:#000
+  join: users {
+    type: left_outer
+    sql_on: ${order_items.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+}
 ```
 
-</div>
+## Update `order_items.view`
 
-> **Note:** The script automates repetitive setup tasks. We encourage you to review the script content to understand each step and learn the underlying Google Cloud operations.
+```bash
+view: order_items {
+  sql_table_name: `cloud-training-demos.thelook_ecommerce.order_items` ;;
+  drill_fields: [id]
 
----
+  # =========================
+  # PRIMARY KEY
+  # =========================
+  dimension: id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}.id ;;
+  }
 
-## 🔐 Important Notice
+  # =========================
+  # DATE DIMENSION GROUPS
+  # =========================
+  dimension_group: created {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.created_at ;;
+  }
 
-<div align="center">
+  dimension_group: delivered {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.delivered_at ;;
+  }
 
-```mermaid
-graph LR
-    Start([Use This Resource?]) --> Question{What's Your Goal?}
-    Question -->|Learn & Understand| Manual[📚 Study the Code]
-    Question -->|Quick Review| Auto[⚡ Use Automation]
-    Question -->|Certification Prep| Both[🎯 Do Both]
-    
-    Manual --> Read[Read Script Line by Line]
-    Read --> Understand[Understand Each Command]
-    Understand --> Practice[Practice Manually First]
-    
-    Auto --> Review[Review Before Running]
-    Review --> Execute[Execute Script]
-    Execute --> Reflect[Reflect on Output]
-    
-    Both --> Manual
-    Both --> Auto
-    
-    Practice --> Success([✅ Deep Learning Achieved])
-    Reflect --> Success
-    
-    style Start fill:#E3F2FD,stroke:#1976D2,color:#000
-    style Success fill:#C8E6C9,stroke:#388E3C,color:#000
-    style Manual fill:#FFF3E0,stroke:#F57C00,color:#000
-    style Auto fill:#F3E5F5,stroke:#7B1FA2,color:#000
-    style Both fill:#E0F2F1,stroke:#00796B,color:#000
+  dimension_group: returned {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.returned_at ;;
+  }
+
+  dimension_group: shipped {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.shipped_at ;;
+  }
+
+  # =========================
+  # OTHER DIMENSIONS
+  # =========================
+  dimension: inventory_item_id {
+    type: number
+    sql: ${TABLE}.inventory_item_id ;;
+  }
+
+  dimension: order_id {
+    type: number
+    sql: ${TABLE}.order_id ;;
+  }
+
+  dimension: product_id {
+    type: number
+    sql: ${TABLE}.product_id ;;
+  }
+
+  dimension: user_id {
+    type: number
+    sql: ${TABLE}.user_id ;;
+  }
+
+  dimension: sale_price {
+    type: number
+    sql: ${TABLE}.sale_price ;;
+  }
+
+  dimension: status {
+    type: string
+    sql: ${TABLE}.status ;;
+  }
+
+  # =========================
+  # MEASURES
+  # =========================
+  measure: count {
+    label: "# of Order Items"
+    type: count
+    drill_fields: [id]
+  }
+
+  measure: total_sale_price {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd
+  }
+
+  measure: customer_dividends {
+    description: "Customers receive 10% of their total sales as a gift card for future purchases."
+    type: number
+    sql: 0.1 * ${total_sale_price} ;;
+    value_format_name: usd
+  }
+}
 ```
 
-</div>
+## Create View `top_100_users`
 
-<details>
-<summary><b> ⚠️ Disclaimer ⚠️- 📖 Educational Use Policy (Expand)</b></summary>
+```bash
+view: top_100_users {
+  derived_table: {
+    explore_source: order_items {
+      column: user_id {}
+      column: customer_dividends {}
+      column: total_sale_price {}
+      column: email { field: users.email }
+    }
+  }
 
-<br>
+  dimension: user_id {
+    primary_key: yes
+    type: number
+  }
 
-**Purpose**  
-This repository provides learning resources to help you understand Google Cloud Platform services. The automation scripts are designed to demonstrate best practices and accelerate your learning journey.
+  dimension: customer_dividends {
+    value_format: "$#,##0.00"
+    type: number
+  }
 
-<table>
-<tr>
-<td width="50%" valign="top">
+  dimension: total_sale_price {
+    value_format: "$#,##0.00"
+    type: number
+  }
 
-### ✅ Intended Use
-
-- Study and understand the underlying Google Cloud operations
-- Learn automation techniques for cloud infrastructure
-- Prepare for certification or professional development
-- Review concepts after manual completion
-
-</td>
-<td width="50%" valign="top">
-
-### 📜 Terms of Service
-
-- Comply with Google Cloud Skills Boost terms of service
-- Use scripts for educational purposes only
-- Complete manual labs first before using automation
-- Give proper attribution if sharing or modifying
-
-</td>
-</tr>
-</table>
-
-**Ethical Considerations**  
-We believe in learning through understanding. While our scripts save time, we strongly encourage you to:
-
-<div align="center">
-
-| Step | Action | Why It Matters |
-|------|--------|----------------|
-| 1️⃣ | Read through the script code | Understand what will happen |
-| 2️⃣ | Complete labs manually first | Build foundational knowledge |
-| 3️⃣ | Understand each command | Learn the "why" not just "how" |
-| 4️⃣ | Use automation as a tool | Reinforce learning, don't replace it |
-
-</div>
-
-</details>
-
----
-
-## 🛠️ Troubleshooting
-
-<div align="center">
-
-```mermaid
-graph LR
-    Issue[❌ Encountered Issue?] --> Type{Issue Type}
-    
-    Type -->|Permission| P1[Check IAM Roles]
-    Type -->|API| A1[Verify API Enabled]
-    Type -->|Authentication| Auth1[Re-authenticate]
-    Type -->|Script| S1[Check Script Syntax]
-    
-    P1 --> P2[Add Required Permissions]
-    A1 --> A2[Enable in Console]
-    Auth1 --> Auth2[gcloud auth login]
-    S1 --> S2[Review Error Output]
-    
-    P2 --> Retry[🔄 Retry Operation]
-    A2 --> Retry
-    Auth2 --> Retry
-    S2 --> Retry
-    
-    Retry --> Success{Fixed?}
-    Success -->|Yes| Done([✅ Resolved])
-    Success -->|No| Help[📞 Seek Help]
-    
-    style Issue fill:#FFCDD2,stroke:#C62828,color:#000
-    style Done fill:#C8E6C9,stroke:#388E3C,color:#000
-    style Retry fill:#FFF9C4,stroke:#F9A825,color:#000
-    style Help fill:#E1BEE7,stroke:#8E24AA,color:#000
+  dimension: email {
+    type: string
+  }
+}
 ```
-
-</div>
-
-<br>
-
-Having issues? Here are quick solutions:
-
-| Issue | Solution |
-|-------|----------|
-| Script won't run | Check execute permissions with `ls -la` |
-| Authentication errors | Verify you're logged into the correct project |
-| API not enabled | Enable required APIs in console |
-| Timeout errors | Check your internet connection and retry |
-| Permission denied | Ensure your account has proper IAM roles |
 
 ---
 

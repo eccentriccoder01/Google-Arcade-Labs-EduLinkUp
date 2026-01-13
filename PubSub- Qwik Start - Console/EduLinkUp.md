@@ -3,7 +3,7 @@
 # Pub/Sub: Qwik Start - Console
 ### Google Cloud Skills Boost - Lab GSP096
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6467/labs/40671)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/1489)
 
 </div>
 

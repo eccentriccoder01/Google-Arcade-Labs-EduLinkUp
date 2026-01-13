@@ -3,7 +3,7 @@
 # Collect Metrics from Exporters using the Managed Service for Prometheus
 ### Google Cloud Skills Boost - Lab GSP1026
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6167/labs/39152)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/4733)
 
 </div>
 

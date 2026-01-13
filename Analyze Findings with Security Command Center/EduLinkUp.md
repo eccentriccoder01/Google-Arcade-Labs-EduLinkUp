@@ -3,7 +3,7 @@
 # Analyze Findings with Security Command Center
 ### Google Cloud Skills Boost - Lab GSP1164
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6482/labs/40749)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/6724)
 
 </div>
 
