@@ -3,7 +3,7 @@
 # Compute Engine: Qwik Start - Windows
 ### Google Cloud Skills Boost - Lab GSP093
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6189/labs/39272)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/759)
 
 </div>
 

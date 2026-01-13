@@ -3,7 +3,7 @@
 # Continuous Delivery with Google Cloud Deploy
 ### Google Cloud Skills Boost - Lab GSP1079
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6464/labs/40628)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/31641)
 
 </div>
 
