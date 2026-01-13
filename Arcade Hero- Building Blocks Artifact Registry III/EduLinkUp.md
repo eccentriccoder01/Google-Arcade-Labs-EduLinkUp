@@ -3,7 +3,7 @@
 # Arcade Hero- Building Blocks Artifact Registry III
 ### Google Cloud Skills Boost - Lab arc1209
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6154/labs/39076)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/32094)
 
 </div>
 

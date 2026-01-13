@@ -1,9 +1,9 @@
 <div align="center">
 
-# App Engine: 3 Ways: Challenge Lab || ARC112  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.cloudskillsboost.google/course_templates/671/labs/592581)
-### Google Cloud Skills Boost - Lab GSP000
+# App Engine: 3 Ways: Challenge Lab || ARC112
+### Google Cloud Skills Boost - Lab ARC112
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/course_templates/671/labs/592581)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/6413)
 
 </div>
 
@@ -11,7 +11,7 @@
 
 ## 📋 Lab Overview
 
-This challenge lab tests your skills in App Engine: 3 Ways:  || ARC112  [![Open Lab](https: //img.shields.io/badge/OpenLabblue?style=flat)](https: //www.cloudskillsboost.google/course_templates/671/labs/592581). You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
+This challenge lab tests your skills in App Engine: 3 Ways:  || ARC112.You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
 
 ```mermaid
 graph LR

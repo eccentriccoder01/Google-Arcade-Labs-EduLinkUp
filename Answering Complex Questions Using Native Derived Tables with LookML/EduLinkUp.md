@@ -3,7 +3,7 @@
 # Answering Complex Questions Using Native Derived Tables with LookML
 ### Google Cloud Skills Boost - Lab GSP935
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/4093)
 
 </div>
 

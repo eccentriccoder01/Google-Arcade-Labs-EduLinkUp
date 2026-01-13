@@ -3,7 +3,7 @@
 # App Dev: Setting up a Development Environment - Python
 ### Google Cloud Skills Boost - Lab GSP183
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6512/labs/40872)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/974)
 
 </div>
 

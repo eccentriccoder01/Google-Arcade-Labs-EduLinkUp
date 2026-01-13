@@ -1,9 +1,9 @@
 <div align="center">
 
-# Analyze Speech & Language with Google APIs: Challenge Lab || ARC114  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.cloudskillsboost.google/course_templates/634/labs/586896)
-### Google Cloud Skills Boost - Lab GSP000
+# Analyze Speech & Language with Google APIs: Challenge Lab || ARC114
+### Google Cloud Skills Boost - Lab ARC114
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/course_templates/634/labs/586896)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/6444)
 
 </div>
 
@@ -11,7 +11,7 @@
 
 ## 📋 Lab Overview
 
-This challenge lab tests your skills in Analyze Speech & Language with Google APIs:  || ARC114  [![Open Lab](https: //img.shields.io/badge/OpenLabblue?style=flat)](https: //www.cloudskillsboost.google/course_templates/634/labs/586896). You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
+This challenge lab tests your skills in Analyze Speech & Language with Google APIs:ARC114. You'll be presented with a set of tasks to complete without step-by-step instructions, demonstrating your ability to apply Google Cloud concepts and services in real-world scenarios.
 
 ```mermaid
 graph LR

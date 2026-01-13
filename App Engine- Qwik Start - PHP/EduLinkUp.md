@@ -3,7 +3,7 @@
 # App Engine: Qwik Start - PHP
 ### Google Cloud Skills Boost - Lab GSP069
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6551/labs/41066)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/702)
 
 </div>
 

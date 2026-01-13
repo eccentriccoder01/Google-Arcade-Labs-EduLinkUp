@@ -3,7 +3,7 @@
 # Authentication, Authorization, and Identity with Vault
 ### Google Cloud Skills Boost - Lab GSP1005
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6550/labs/41050)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/4699)
 
 </div>
 

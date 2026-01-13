@@ -3,7 +3,7 @@
 # Automating the Deployment of Networks with Terraform
 ### Google Cloud Skills Boost - Lab GSP460
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6558/labs/41143)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/catalog_lab/1648)
 
 </div>
 
