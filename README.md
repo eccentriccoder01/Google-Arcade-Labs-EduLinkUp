@@ -198,14 +198,21 @@ Having issues? Here are quick solutions:
 <div align="center">
 <a href="https://www.linkedin.com/in/eccentricexplorer" target="_blank" rel="noopener noreferrer">
     <img src="/public/Sagnik.jpg" alt="Sagnik" width="96" style="border-radius:50%;margin-right:12px;"/>
-</a>
+</a> &nbsp;
 <a href="https://www.linkedin.com/in/akshaykumar0611" target="_blank" rel="noopener noreferrer">
     <img src="/public/Akshay.jpg" alt="Akshay Kumar" width="96" style="border-radius:50%;margin-left:12px;"/>
 </a>
 
 <br/>
 
-[![Sagnik - LinkedIn](https://img.shields.io/badge/Sagnik_-_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eccentricexplorer) [![Akshay - LinkedIn](https://img.shields.io/badge/Akshay_-_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/akshaykumar0611)
+<p>
+  <a href="https://www.linkedin.com/in/eccentricexplorer">
+    <img src="https://img.shields.io/badge/Sagnik_-_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Sagnik - LinkedIn" width="96" />
+  </a> &nbsp;
+  <a href="https://www.linkedin.com/in/akshaykumar0611">
+    <img src="https://img.shields.io/badge/Akshay_-_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Akshay - LinkedIn" width="96" />
+  </a>
+</p>
 
 </div>
 
@@ -256,6 +263,7 @@ This project is open-source and available under the [MIT License](LICENSE).
 Feel free to reach out with any questions or feedback\! Thanks for reading, here's a cookiepookie:
 
 ![Cat](https://github.com/XevenTech/xeventech/blob/main/cat.gif?raw=true "Thank You")
+
 
 
 
