@@ -34,8 +34,8 @@ import vertexai
 import urllib.request
 from vertexai.generative_models import GenerativeModel, Part
 
-PROJECT_ID = "your-project-id"
-LOCATION = "your-location"
+PROJECT_ID = "YOUR_PROJECT_ID"
+LOCATION = "YOUR_LOCATION"
 
 vertexai.init(project=PROJECT_ID, location=LOCATION)
 
