@@ -30,9 +30,10 @@ graph LR
 Copy and paste the following commands into your terminal:
 
 ```bash
-PROJECT=$(gcloud config get-value project) && BUCKET="qwiklabs-gcp-03-479c3001b85e-bucket" && gsutil setmeta -h "Content-Type:text/html" gs://${BUCKET}/index.html && gsutil setmeta -h "Content-Type:text/css" gs://${BUCKET}/style.css && gsutil setmeta -h "Content-Type:image/jpeg" gs://${BUCKET}/logo.jpg && gsutil web set -m index.html -e 404.html gs://${BUCKET} && gsutil iam ch allUsers:objectViewer gs://${BUCKET}
+PROJECT=$(gcloud config get-value project) && BUCKET="<REPLACE_WITH_YOUR_BUCKET_NAME>" && gsutil setmeta -h "Content-Type:text/html" gs://${BUCKET}/index.html && gsutil setmeta -h "Content-Type:text/css" gs://${BUCKET}/style.css && gsutil setmeta -h "Content-Type:image/jpeg" gs://${BUCKET}/logo.jpg && gsutil web set -m index.html -e 404.html gs://${BUCKET} && gsutil iam ch allUsers:objectViewer gs://${BUCKET}
 ```
 
+⚠️ **Important:** Replace `<REPLACE_WITH_YOUR_BUCKET_NAME>` with the **exact bucket name provided in your lab instructions**.
 
 
 > **Note:** The script automates repetitive setup tasks. We encourage you to review the script content to understand each step and learn the underlying Google Cloud operations.
