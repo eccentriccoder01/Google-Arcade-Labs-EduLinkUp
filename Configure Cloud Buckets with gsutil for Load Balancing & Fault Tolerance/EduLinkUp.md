@@ -30,17 +30,9 @@ graph LR
 Copy and paste the following commands into your terminal:
 
 ```bash
-PROJECT_ID=$(gcloud config get-value project)
-BUCKET=${PROJECT_ID}-bucket
-NEW_BUCKET=${PROJECT_ID}-edulinkup
-gsutil mb gs://$NEW_BUCKET
-gsutil web set -m index.html -e error.html gs://$NEW_BUCKET
-gsutil iam ch allUsers:roles/storage.admin gs://$NEW_BUCKET
-gsutil -m rsync -r gs://$BUCKET gs://$NEW_BUCKET
-gcloud compute backend-buckets create edulinkup-backend  --gcs-bucket-name=$NEW_BUCKET  --enable-cdn
-gcloud compute url-maps create edulinkup-website-map  --default-backend-bucket=edulinkup-backend
-gcloud compute target-http-proxies create edulinkup-website-proxy  --url-map=edulinkup-website-map
-gcloud compute forwarding-rules create edulinkup-website-rule  --global  --target-http-proxy=edulinkup-website-proxy  --ports=80
+curl -LO https://raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/main/Configure%20Cloud%20Buckets%20with%20gsutil%20for%20Load%20Balancing%20%26%20Fault%20Tolerance/EduLinkUp.sh
+
+source EduLinkUp.sh
 ```
 
 
