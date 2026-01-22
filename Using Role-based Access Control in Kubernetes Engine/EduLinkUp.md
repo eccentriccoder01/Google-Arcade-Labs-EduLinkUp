@@ -1,9 +1,9 @@
 ﻿<div align="center">
 
 # Using Google Cloud Services with Apigee X
-### Google Cloud Skills Boost - Lab GSP493
+### Google Cloud Skills Boost - Lab GSP845
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/focuses/5156?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=69060655)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/4682 )
 
 ##  Lab Overview
 
@@ -29,7 +29,7 @@ graph LR
 Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
-curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Using%20Role-based%20Access%20Control%20in%20Kubernetes%20Engine/EduLinkUp.sh
+curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Using%20Google%20Cloud%20Services%20with%20Apigee%20X/EduLinkUp.sh
 sudo chmod +x EduLinkUp.sh 
 ./EduLinkUp.sh
 ```
