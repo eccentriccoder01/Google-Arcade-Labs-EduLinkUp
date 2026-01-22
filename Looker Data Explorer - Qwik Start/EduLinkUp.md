@@ -1,9 +1,9 @@
 <div align="center">
 
-# Employing Best Practices for Improving the Usability of LookML Projects
-### Google Skills - Lab GSP1020
+# Looker Data Explorer - Qwik Start
+### Google Skills - Lab GSP718
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](<LAB_LINK>)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/focuses/16552?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=69058468)
 
 ##  Lab Overview
 

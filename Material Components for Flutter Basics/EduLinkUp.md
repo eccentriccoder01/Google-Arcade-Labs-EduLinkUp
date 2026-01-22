@@ -1,9 +1,9 @@
 <div align="center">
 
-# Employing Best Practices for Improving the Usability of LookML Projects
-### Google Skills - Lab GSP1020
+# Material Components for Flutter Basics
+### Google Skills - Lab GSP887
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](<LAB_LINK>)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/games/7003/labs/43516)
 
 ##  Lab Overview
 

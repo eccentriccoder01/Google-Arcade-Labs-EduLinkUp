@@ -1,9 +1,8 @@
 <div align="center">
 
-# Employing Best Practices for Improving the Usability of LookML Projects
-### Google Skills - Lab GSP1020
+# Manage Cloud Storage Lifecycle Policy using gsutil
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](<LAB_LINK>)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/games/6987/labs/43425)
 
 ##  Lab Overview
 
