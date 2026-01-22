@@ -1,9 +1,9 @@
-<div align="center">
+﻿<div align="center">
 
-# Employing Best Practices for Improving the Usability of LookML Projects
-### Google Skills - Lab GSP1020
+# Kickstarting Application Development with Gemini Code Assist: Challenge Lab
+### Google Cloud Skills Boost - Lab GSP527
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](<LAB_LINK>)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
 
 ##  Lab Overview
 
@@ -53,49 +53,49 @@ const firestore = new Firestore();
 
 // Create a Cloud Function that will be triggered by an HTTP request
 functions.http('newproducts', async (req, res) => {
-  // Get the products from Firestore
-  const products = await firestore.collection('inventory').where('timestamp', '>', new Date(Date.now() - 604800000)).get();
+Â  // Get the products from Firestore
+Â  const products = await firestore.collection('inventory').where('timestamp', '>', new Date(Date.now() - 604800000)).get();
 
-  initFirestoreCollection();
+Â  initFirestoreCollection();
 
-  // Create an array of products
-  const productsArray = [];
-  products.forEach((product) => {
-    const p = {
-      id: product.id,
-      name: product.data().name + ' (' + product.data().quantity + ')',
-      price: product.data().price,
-      quantity: product.data().quantity,
-      imgfile: product.data().imgfile,
-      timestamp: product.data().timestamp,
-      actualdateadded: product.data().actualdateadded,
-    };
-    productsArray.push(p);
-  });
+Â  // Create an array of products
+Â  const productsArray = [];
+Â  products.forEach((product) => {
+Â    const p = {
+Â      id: product.id,
+Â      name: product.data().name + ' (' + product.data().quantity + ')',
+Â      price: product.data().price,
+Â      quantity: product.data().quantity,
+Â      imgfile: product.data().imgfile,
+Â      timestamp: product.data().timestamp,
+Â      actualdateadded: product.data().actualdateadded,
+Â    };
+Â    productsArray.push(p);
+Â  });
 
-  // Send the products array to the client
-  res.set('Access-Control-Allow-Origin', '*');
-  res.send(productsArray);
+Â  // Send the products array to the client
+Â  res.set('Access-Control-Allow-Origin', '*');
+Â  res.send(productsArray);
 });
 
 // Create a Cloud Function for out-of-stock products
 functions.http('outofstock', async (req, res) => {
-  // Query Firestore for products with quantity 0 (out of stock)
-  const snapshot = await firestore.collection('inventory').where('quantity', '==', 0).get();
-  const outOfStock = [];
-  snapshot.forEach(doc => {
-    outOfStock.push({
-      id: doc.id,
-      name: doc.data().name,
-      price: doc.data().price,
-      quantity: doc.data().quantity,
-      imgfile: doc.data().imgfile,
-      timestamp: doc.data().timestamp,
-      actualdateadded: doc.data().actualdateadded
-    });
-  });
-  res.set('Access-Control-Allow-Origin', '*');
-  res.status(200).json(outOfStock);
+Â  // Query Firestore for products with quantity 0 (out of stock)
+Â  const snapshot = await firestore.collection('inventory').where('quantity', '==', 0).get();
+Â  const outOfStock = [];
+Â  snapshot.forEach(doc => {
+Â    outOfStock.push({
+Â      id: doc.id,
+Â      name: doc.data().name,
+Â      price: doc.data().price,
+Â      quantity: doc.data().quantity,
+Â      imgfile: doc.data().imgfile,
+Â      timestamp: doc.data().timestamp,
+Â      actualdateadded: doc.data().actualdateadded
+Â    });
+Â  });
+Â  res.set('Access-Control-Allow-Origin', '*');
+Â  res.status(200).json(outOfStock);
 });
 
 // ------------------- ------------------- ------------------- ------------------- -------------------
@@ -104,106 +104,106 @@ functions.http('outofstock', async (req, res) => {
 
 // This will overwrite products in the database - this is intentional, to keep the date-added fresh.
 function initFirestoreCollection() {
-  const oldProducts = [
-    "Apples",
-    "Bananas",
-    "Milk",
-    "Whole Wheat Bread",
-    "Eggs",
-    "Cheddar Cheese",
-    "Whole Chicken",
-    "Rice",
-    "Black Beans",
-    "Bottled Water",
-    "Apple Juice",
-    "Cola",
-    "Coffee Beans",
-    "Green Tea",
-    "Watermelon",
-    "Broccoli",
-    "Jasmine Rice",
-    "Yogurt",
-    "Beef",
-    "Shrimp",
-    "Walnuts",
-    "Sunflower Seeds",
-    "Fresh Basil",
-    "Cinnamon",
-  ];
-  // Add "old" products to Firestore
-  for (let i = 0; i < oldProducts.length; i++) {
-    const oldProduct = {
-      name: oldProducts[i],
-      price: Math.floor(Math.random() * 10) + 1,
-      quantity: Math.floor(Math.random() * 500) + 1,
-      imgfile: "product-images/" + oldProducts[i].replace(/\s/g, "").toLowerCase() + ".png",
-      timestamp: new Date(Date.now() - Math.floor(Math.random() * 31536000000) - 7776000000),
-      actualdateadded: new Date(Date.now()),
-    };
-    console.log("Adding (or updating) product in firestore: " + oldProduct.name);
-    addOrUpdateFirestore(oldProduct);
-  }
-  // Add recent products
-  const recentProducts = [
-    "Parmesan Crisps",
-    "Pineapple Kombucha",
-    "Maple Almond Butter",
-    "Mint Chocolate Cookies",
-    "White Chocolate Caramel Corn",
-    "Acai Smoothie Packs",
-    "Smores Cereal",
-    "Peanut Butter and Jelly Cups",
-  ];
-  for (let j = 0; j < recentProducts.length; j++) {
-    const recent = {
-      name: recentProducts[j],
-      price: Math.floor(Math.random() * 10) + 1,
-      quantity: Math.floor(Math.random() * 100) + 1,
-      imgfile: "product-images/" + recentProducts[j].replace(/\s/g, "").toLowerCase() + ".png",
-      timestamp: new Date(Date.now() - Math.floor(Math.random() * 518400000) + 1),
-      actualdateadded: new Date(Date.now()),
-    };
-    console.log("Adding (or updating) product in firestore: " + recent.name);
-    addOrUpdateFirestore(recent);
-  }
-  // Add recent products that are out of stock
-  const recentProductsOutOfStock = ["Wasabi Party Mix", "Jalapeno Seasoning"];
-  for (let k = 0; k < recentProductsOutOfStock.length; k++) {
-    const oosProduct = {
-      name: recentProductsOutOfStock[k],
-      price: Math.floor(Math.random() * 10) + 1,
-      quantity: 0,
-      imgfile: "product-images/" + recentProductsOutOfStock[k].replace(/\s/g, "").toLowerCase() + ".png",
-      timestamp: new Date(Date.now() - Math.floor(Math.random() * 518400000) + 1),
-      actualdateadded: new Date(Date.now()),
-    };
-    console.log("Adding (or updating) out of stock product in firestore: " + oosProduct.name);
-    addOrUpdateFirestore(oosProduct);
-  }
+Â  const oldProducts = [
+Â    "Apples",
+Â    "Bananas",
+Â    "Milk",
+Â    "Whole Wheat Bread",
+Â    "Eggs",
+Â    "Cheddar Cheese",
+Â    "Whole Chicken",
+Â    "Rice",
+Â    "Black Beans",
+Â    "Bottled Water",
+Â    "Apple Juice",
+Â    "Cola",
+Â    "Coffee Beans",
+Â    "Green Tea",
+Â    "Watermelon",
+Â    "Broccoli",
+Â    "Jasmine Rice",
+Â    "Yogurt",
+Â    "Beef",
+Â    "Shrimp",
+Â    "Walnuts",
+Â    "Sunflower Seeds",
+Â    "Fresh Basil",
+Â    "Cinnamon",
+Â  ];
+Â  // Add "old" products to Firestore
+Â  for (let i = 0; i < oldProducts.length; i++) {
+Â    const oldProduct = {
+Â      name: oldProducts[i],
+Â      price: Math.floor(Math.random() * 10) + 1,
+Â      quantity: Math.floor(Math.random() * 500) + 1,
+Â      imgfile: "product-images/" + oldProducts[i].replace(/\s/g, "").toLowerCase() + ".png",
+Â      timestamp: new Date(Date.now() - Math.floor(Math.random() * 31536000000) - 7776000000),
+Â      actualdateadded: new Date(Date.now()),
+Â    };
+Â    console.log("Adding (or updating) product in firestore: " + oldProduct.name);
+Â    addOrUpdateFirestore(oldProduct);
+Â  }
+Â  // Add recent products
+Â  const recentProducts = [
+Â    "Parmesan Crisps",
+Â    "Pineapple Kombucha",
+Â    "Maple Almond Butter",
+Â    "Mint Chocolate Cookies",
+Â    "White Chocolate Caramel Corn",
+Â    "Acai Smoothie Packs",
+Â    "Smores Cereal",
+Â    "Peanut Butter and Jelly Cups",
+Â  ];
+Â  for (let j = 0; j < recentProducts.length; j++) {
+Â    const recent = {
+Â      name: recentProducts[j],
+Â      price: Math.floor(Math.random() * 10) + 1,
+Â      quantity: Math.floor(Math.random() * 100) + 1,
+Â      imgfile: "product-images/" + recentProducts[j].replace(/\s/g, "").toLowerCase() + ".png",
+Â      timestamp: new Date(Date.now() - Math.floor(Math.random() * 518400000) + 1),
+Â      actualdateadded: new Date(Date.now()),
+Â    };
+Â    console.log("Adding (or updating) product in firestore: " + recent.name);
+Â    addOrUpdateFirestore(recent);
+Â  }
+Â  // Add recent products that are out of stock
+Â  const recentProductsOutOfStock = ["Wasabi Party Mix", "Jalapeno Seasoning"];
+Â  for (let k = 0; k < recentProductsOutOfStock.length; k++) {
+Â    const oosProduct = {
+Â      name: recentProductsOutOfStock[k],
+Â      price: Math.floor(Math.random() * 10) + 1,
+Â      quantity: 0,
+Â      imgfile: "product-images/" + recentProductsOutOfStock[k].replace(/\s/g, "").toLowerCase() + ".png",
+Â      timestamp: new Date(Date.now() - Math.floor(Math.random() * 518400000) + 1),
+Â      actualdateadded: new Date(Date.now()),
+Â    };
+Â    console.log("Adding (or updating) out of stock product in firestore: " + oosProduct.name);
+Â    addOrUpdateFirestore(oosProduct);
+Â  }
 }
 
 // Helper - add Firestore doc if not exists, otherwise update
 function addOrUpdateFirestore(product) {
-  firestore
-    .collection("inventory")
-    .where("name", "==", product.name)
-    .get()
-    .then((querySnapshot) => {
-      if (querySnapshot.empty) {
-        firestore.collection("inventory").add(product);
-      } else {
-        querySnapshot.forEach((doc) => {
-          firestore.collection("inventory").doc(doc.id).update(product);
-        });
-      }
-    });
+Â  firestore
+Â    .collection("inventory")
+Â    .where("name", "==", product.name)
+Â    .get()
+Â    .then((querySnapshot) => {
+Â      if (querySnapshot.empty) {
+Â        firestore.collection("inventory").add(product);
+Â      } else {
+Â        querySnapshot.forEach((doc) => {
+Â          firestore.collection("inventory").doc(doc.id).update(product);
+Â        });
+Â      }
+Â    });
 }
 //Subscribe to https://www.youtube.com/@EduLinkUp/videos 
 ```
 ```bash
 cd cymbal-superstore/functions
 ```
-**⚠️Change `REGION` of below As per your lab Instruction**
+**âš ï¸Change `REGION` of below As per your lab Instruction**
 ```bash
 gcloud functions deploy outofstock --runtime=nodejs20 --trigger-http --entry-point=outofstock --region=us-central1 --allow-unauthenticated
 ```
@@ -246,7 +246,7 @@ paths:
               type: object
 security: []  # This allows unauthenticated access; or replace with proper API key security
 ```
-**⚠️Replace `REGION-PROJECT_ID` with your actual project ID**
+**âš ï¸Replace `REGION-PROJECT_ID` with your actual project ID**
 Step 4: Enable API Gateway Service
 ```bash
 gcloud services enable apigateway.googleapis.com
@@ -261,7 +261,7 @@ Step 6: Create API Gateway & Verify and Test
 gcloud api-gateway gateways create $GATEWAY_ID --api=$API_ID --api-config=$CONFIG_ID --location=us-central1
 gcloud api-gateway gateways describe $GATEWAY_ID --location=us-central1
 ```
-**⚠️Change `LOCATION` of above As per your lab Instruction**
+**âš ï¸Change `LOCATION` of above As per your lab Instruction**
 
 ---
 
@@ -277,7 +277,7 @@ Discover the Google Cloud Arcade Hub - <b>Track progress with EduLinkUp's exclus
 
 <div align="center">
 
-[![Arcade Hub](https://img.shields.io/badge/🎮_Arcade_Hub-FF6F61?style=for-the-badge&logo=gamepad&logoColor=white)](https://edulinkup.dev/arcade-calculator)
+[![Arcade Hub](https://img.shields.io/badge/ðŸŽ®_Arcade_Hub-FF6F61?style=for-the-badge&logo=gamepad&logoColor=white)](https://edulinkup.dev/arcade-calculator)
 
 </div>
 
@@ -288,16 +288,16 @@ Discover the Google Cloud Arcade Hub - <b>Track progress with EduLinkUp's exclus
 <li><strong>Facilitator Program</strong>: Guides, milestone tracking, community roles, and swags.</li>
 </ul>
 
-## 🔐 Important Notice
+## ðŸ” Important Notice
 
 <div align="center">
 
 ```mermaid
 graph LR
     Start([Use This Resource?]) --> Question{What's Your Goal?}
-    Question -->|Learn & Understand| Manual[📚 Study the Code]
-    Question -->|Quick Review| Auto[⚡ Use Automation]
-    Question -->|Certification Prep| Both[🎯 Do Both]
+    Question -->|Learn & Understand| Manual[ðŸ“š Study the Code]
+    Question -->|Quick Review| Auto[âš¡ Use Automation]
+    Question -->|Certification Prep| Both[ðŸŽ¯ Do Both]
     
     Manual --> Read[Read Script Line by Line]
     Read --> Understand[Understand Each Command]
@@ -310,7 +310,7 @@ graph LR
     Both --> Manual
     Both --> Auto
     
-    Practice --> Success([✅ Deep Learning Achieved])
+    Practice --> Success([âœ… Deep Learning Achieved])
     Reflect --> Success
     
     style Start fill:#E3F2FD,stroke:#1976D2,color:#000
@@ -323,7 +323,7 @@ graph LR
 </div>
 
 <details>
-<summary><b> ⚠️ Disclaimer ⚠️- 📖 Educational Use Policy (Expand)</b></summary>
+<summary><b> âš ï¸ Disclaimer âš ï¸- ðŸ“– Educational Use Policy (Expand)</b></summary>
 
 <br>
 
@@ -334,7 +334,7 @@ This repository provides learning resources to help you understand Google Cloud 
 <tr>
 <td width="50%" valign="top">
 
-### ✅ Intended Use
+### Google Cloud Skills Boost - Lab GSP527
 
 - Study and understand the underlying Google Cloud operations
 - Learn automation techniques for cloud infrastructure
@@ -344,7 +344,7 @@ This repository provides learning resources to help you understand Google Cloud 
 </td>
 <td width="50%" valign="top">
 
-### 📜 Terms of Service
+### Google Cloud Skills Boost - Lab GSP527
 
 - Comply with Google Cloud Skills Boost terms of service
 - Use scripts for educational purposes only
@@ -362,10 +362,10 @@ We believe in learning through understanding. While our scripts save time, we st
 
 | Step | Action | Why It Matters |
 |------|--------|----------------|
-| 1️⃣ | Read through the script code | Understand what will happen |
-| 2️⃣ | Complete labs manually first | Build foundational knowledge |
-| 3️⃣ | Understand each command | Learn the "why" not just "how" |
-| 4️⃣ | Use automation as a tool | Reinforce learning, don't replace it |
+| 1ï¸âƒ£ | Read through the script code | Understand what will happen |
+| 2ï¸âƒ£ | Complete labs manually first | Build foundational knowledge |
+| 3ï¸âƒ£ | Understand each command | Learn the "why" not just "how" |
+| 4ï¸âƒ£ | Use automation as a tool | Reinforce learning, don't replace it |
 
 </div>
 
@@ -373,13 +373,13 @@ We believe in learning through understanding. While our scripts save time, we st
 
 ---
 
-## 🛠️ Troubleshooting
+## ðŸ› ï¸ Troubleshooting
 
 <div align="center">
 
 ```mermaid
 graph LR
-    Issue[❌ Encountered Issue?] --> Type{Issue Type}
+    Issue[âŒ Encountered Issue?] --> Type{Issue Type}
     
     Type -->|Permission| P1[Check IAM Roles]
     Type -->|API| A1[Verify API Enabled]
@@ -391,14 +391,14 @@ graph LR
     Auth1 --> Auth2[gcloud auth login]
     S1 --> S2[Review Error Output]
     
-    P2 --> Retry[🔄 Retry Operation]
+    P2 --> Retry[ðŸ”„ Retry Operation]
     A2 --> Retry
     Auth2 --> Retry
     S2 --> Retry
     
     Retry --> Success{Fixed?}
-    Success -->|Yes| Done([✅ Resolved])
-    Success -->|No| Help[📞 Seek Help]
+    Success -->|Yes| Done([âœ… Resolved])
+    Success -->|No| Help[ðŸ“ž Seek Help]
     
     style Issue fill:#FFCDD2,stroke:#C62828,color:#000
     style Done fill:#C8E6C9,stroke:#388E3C,color:#000
@@ -424,11 +424,11 @@ Having issues? Here are quick solutions:
 
 ## **Join Our Growing Ecosystem**
 
-[![Website](https://img.shields.io/badge/🌍_Website-edulinkup.dev-6C63FF?style=for-the-badge&logoColor=white)](https://edulinkup.dev) [![LinkedIn](https://img.shields.io/badge/LinkedIn_Page-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/edulinkup) [![YouTube](https://img.shields.io/badge/YouTube_Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@EduLinkUp)
+[![Website](https://img.shields.io/badge/ðŸŒ_Website-edulinkup.dev-6C63FF?style=for-the-badge&logoColor=white)](https://edulinkup.dev) [![LinkedIn](https://img.shields.io/badge/LinkedIn_Page-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/edulinkup) [![YouTube](https://img.shields.io/badge/YouTube_Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@EduLinkUp)
 
 ---
 
-### 📩 **Let's Connect Personally**
+### Google Cloud Skills Boost - Lab GSP527
 
 <div align="center">
 <a href="https://www.linkedin.com/in/eccentricexplorer" target="_blank" rel="noopener noreferrer">
@@ -453,7 +453,7 @@ Having issues? Here are quick solutions:
 
 ---
 
-### 🌱 **Join the Developer Community**
+### Google Cloud Skills Boost - Lab GSP527
 
 **Stay updated with everything happening in the EduLinkUp universe:**
 
@@ -471,6 +471,8 @@ Having issues? Here are quick solutions:
 <sub>Last updated: January 2026 | Version 1.0</sub>
 
 </div>
+
+
 
 
 
