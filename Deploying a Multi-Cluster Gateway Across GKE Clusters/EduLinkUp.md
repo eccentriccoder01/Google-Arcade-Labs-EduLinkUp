@@ -1,9 +1,9 @@
 ﻿<div align="center">
 
-# || GSP  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)]()
+# || GSP  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)]( https://www.skills.google/catalog_lab/31333 )
 ### Google Cloud Skills Boost - Lab GSP1245
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/31333 )
 
 ##  Lab Overview
 

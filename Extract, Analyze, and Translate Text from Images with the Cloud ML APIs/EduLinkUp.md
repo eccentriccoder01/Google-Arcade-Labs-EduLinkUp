@@ -3,7 +3,7 @@
 # Extract, Analyze, and Translate Text from Images with the Cloud ML APIs
 ### Google Cloud Skills Boost - Lab GSP075
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/1111 )
 
 ##  Lab Overview
 

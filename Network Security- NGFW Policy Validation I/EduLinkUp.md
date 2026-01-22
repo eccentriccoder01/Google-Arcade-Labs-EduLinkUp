@@ -3,7 +3,7 @@
 # Network Security: NGFW Policy Validation I || gem-netsec-cloud-ngfw  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.skills.google/focuses/131534?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=61881129)
 ### Google Cloud Skills Boost - Lab gem-netsec-cloud-ngfw
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/32503 )
 
 ##  Lab Overview
 

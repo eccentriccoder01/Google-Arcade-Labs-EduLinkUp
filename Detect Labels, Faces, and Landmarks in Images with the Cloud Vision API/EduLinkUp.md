@@ -3,7 +3,7 @@
 # Detect Labels, Faces, and Landmarks in Images with the Cloud Vision API
 ### Google Cloud Skills Boost - Lab GSP037
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/1112 )
 
 ##  Lab Overview
 

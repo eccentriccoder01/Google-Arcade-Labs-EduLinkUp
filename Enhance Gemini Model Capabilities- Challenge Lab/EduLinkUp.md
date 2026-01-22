@@ -3,7 +3,7 @@
 # Enhance Gemini Model Capabilities: Challenge Lab
 ### Google Cloud Skills Boost - Lab GSP525
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/31978 )
 
 ##  Lab Overview
 

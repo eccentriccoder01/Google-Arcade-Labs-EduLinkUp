@@ -3,7 +3,7 @@
 # Connect to Cloud SQL from an Application in Google Kubernetes Engine
 ### Google Cloud Skills Boost - Lab GSP449
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/1772 )
 
 ##  Lab Overview
 

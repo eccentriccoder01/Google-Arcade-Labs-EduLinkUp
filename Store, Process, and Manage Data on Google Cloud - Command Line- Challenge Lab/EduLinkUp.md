@@ -3,7 +3,7 @@
 # Store, Process, and Manage Data on Google Cloud - Command Line: Challenge Lab || ARC102  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.cloudskillsboost.google/course_templates/659/labs/591420)
 ### Google Cloud Skills Boost - Lab ARC102
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/6264 )
 
 ##  Lab Overview
 

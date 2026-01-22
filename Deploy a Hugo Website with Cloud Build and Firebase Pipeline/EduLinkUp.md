@@ -3,7 +3,7 @@
 # Deploy a Hugo Website with Cloud Build and Firebase Pipeline
 ### Google Cloud Skills Boost - Lab GSP747
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/3102 )
 
 ##  Lab Overview
 

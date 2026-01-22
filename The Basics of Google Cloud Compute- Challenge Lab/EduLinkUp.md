@@ -3,7 +3,7 @@
 # The Basics of Google Cloud Compute: Challenge Lab || ARC120  [![Open Lab](https: //img.shields.io/badge/Open-Lab-blue?style=flat)](https: //www.cloudskillsboost.google/course_templates/754/labs/584203)
 ### Google Cloud Skills Boost - Lab ARC120
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/6464 )
 
 ##  Lab Overview
 

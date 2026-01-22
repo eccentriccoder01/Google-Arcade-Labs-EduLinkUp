@@ -3,7 +3,7 @@
 # Securing APIs with Apigee X
 ### Google Cloud Skills Boost - Lab GSP844
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/4599 )
 
 ##  Lab Overview
 

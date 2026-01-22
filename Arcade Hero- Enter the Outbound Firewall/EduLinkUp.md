@@ -3,7 +3,7 @@
 # Arcade Hero: Enter the Outbound Firewall || ARC141
 ### Google Cloud Skills Boost - Lab ARC141
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/31139 )
 
 ##  Lab Overview
 

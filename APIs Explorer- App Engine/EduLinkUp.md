@@ -3,7 +3,7 @@
 # APIs Explorer: App Engine
 ### Google Cloud Skills Boost - Lab GSP422
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]()
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/1472 )
 
 ##  Lab Overview
 
