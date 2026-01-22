@@ -3,7 +3,7 @@
 # Multimodal Content Generation with Gemini on Vertex AI
 ### Google Skills
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](<REPLACE_WITH_LAB_LINK>)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/games/6982/labs/43382)
 
 ##  Lab Overview
 
@@ -25,6 +25,8 @@ graph LR
 ---
 
 ##  Quick Start Guide
+
+<div align="left">
 
 Copy and paste the following commands into your terminal:
 
@@ -82,7 +84,32 @@ This script contains **placeholder values**. Before running it, make sure to rep
 
 > **Note:** The script automates repetitive setup tasks. We encourage you to review the script content to understand each step and learn the underlying Google Cloud operations.
 
+</div>
+
 ---
+
+<div align="center">
+
+## **Google Cloud Arcade Hub**
+
+</div>
+
+<p>
+Discover the Google Cloud Arcade Hub - <b>Track progress with EduLinkUp's exclusive Arcade points calculator</b>, Skill Badges, Arcade Games and Arcade Trivia, explore lab-free courses, and join the Facilitator program for milestones, recognition, and swags.
+</p>
+
+<div align="center">
+
+[![Arcade Hub](https://img.shields.io/badge/🎮_Arcade_Hub-FF6F61?style=for-the-badge&logo=gamepad&logoColor=white)](https://edulinkup.dev/arcade-calculator)
+
+</div>
+
+<ul>
+<li><strong>Arcade Points Calculator</strong>: Estimate points, plan goals, and see leaderboard impact.</li>
+<li><strong>Badges & Games</strong>: Earn badges for achievements and play bite-sized learning games.</li>
+<li><strong>Lab-Free Courses</strong>: Access curated, free learning paths and practice labs to achieve milestones in the Facilitaor Program.</li>
+<li><strong>Facilitator Program</strong>: Guides, milestone tracking, community roles, and swags.</li>
+</ul>
 
 ## 🔐 Important Notice
 
@@ -226,14 +253,6 @@ Having issues? Here are quick solutions:
 
 ---
 
-### 🌱 **Join the Developer Community**
-
-**Stay updated with everything happening in the EduLinkUp universe:**
-
-[![WhatsApp Community](https://img.shields.io/badge/WhatsApp_Community-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/HN5eOl0p5DBKBqTbIiOTgv)
-
----
-
 ### 📩 **Let's Connect Personally**
 
 <div align="center">
@@ -256,6 +275,14 @@ Having issues? Here are quick solutions:
 </p>
 
 </div>
+
+---
+
+### 🌱 **Join the Developer Community**
+
+**Stay updated with everything happening in the EduLinkUp universe:**
+
+[![WhatsApp Community](https://img.shields.io/badge/WhatsApp_Community-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/HN5eOl0p5DBKBqTbIiOTgv)
 
 </div>
 
