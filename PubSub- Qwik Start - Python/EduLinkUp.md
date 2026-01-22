@@ -75,7 +75,7 @@ Discover the Google Cloud Arcade Hub - <b>Track progress with EduLinkUp's exclus
 
 <div align="center">
 
-[![Arcade Hub](https://img.shields.io/badge/ðŸŽ®_Arcade_Hub-FF6F61?style=for-the-badge&logo=gamepad&logoColor=white)](https://edulinkup.dev/arcade-calculator)
+[![Arcade Hub](https://img.shields.io/badge/🎮_Arcade_Hub-FF6F61?style=for-the-badge&logo=gamepad&logoColor=white)](https://edulinkup.dev/arcade-calculator)
 
 </div>
 
@@ -86,16 +86,16 @@ Discover the Google Cloud Arcade Hub - <b>Track progress with EduLinkUp's exclus
 <li><strong>Facilitator Program</strong>: Guides, milestone tracking, community roles, and swags.</li>
 </ul>
 
-## ðŸ” Important Notice
+## 🔐 Important Notice
 
 <div align="center">
 
 ```mermaid
 graph LR
     Start([Use This Resource?]) --> Question{What's Your Goal?}
-    Question -->|Learn & Understand| Manual[ðŸ“š Study the Code]
-    Question -->|Quick Review| Auto[âš¡ Use Automation]
-    Question -->|Certification Prep| Both[ðŸŽ¯ Do Both]
+    Question -->|Learn & Understand| Manual[📚 Study the Code]
+    Question -->|Quick Review| Auto[⚡ Use Automation]
+    Question -->|Certification Prep| Both[🎯 Do Both]
     
     Manual --> Read[Read Script Line by Line]
     Read --> Understand[Understand Each Command]
@@ -108,7 +108,7 @@ graph LR
     Both --> Manual
     Both --> Auto
     
-    Practice --> Success([âœ… Deep Learning Achieved])
+    Practice --> Success([✅ Deep Learning Achieved])
     Reflect --> Success
     
     style Start fill:#E3F2FD,stroke:#1976D2,color:#000
@@ -121,7 +121,7 @@ graph LR
 </div>
 
 <details>
-<summary><b> âš ï¸ Disclaimer âš ï¸- ðŸ“– Educational Use Policy (Expand)</b></summary>
+<summary><b> ⚠️ Disclaimer ⚠️- 📖 Educational Use Policy (Expand)</b></summary>
 
 <br>
 
@@ -132,7 +132,7 @@ This repository provides learning resources to help you understand Google Cloud 
 <tr>
 <td width="50%" valign="top">
 
-### Google Cloud Skills Boost - Lab GSP094
+### ✅ Intended Use - Lab GSP094
 
 - Study and understand the underlying Google Cloud operations
 - Learn automation techniques for cloud infrastructure
@@ -142,7 +142,7 @@ This repository provides learning resources to help you understand Google Cloud 
 </td>
 <td width="50%" valign="top">
 
-### Google Cloud Skills Boost - Lab GSP094
+### 📜 Terms of Service - Lab GSP094
 
 - Comply with Google Cloud Skills Boost terms of service
 - Use scripts for educational purposes only
@@ -160,10 +160,10 @@ We believe in learning through understanding. While our scripts save time, we st
 
 | Step | Action | Why It Matters |
 |------|--------|----------------|
-| 1ï¸âƒ£ | Read through the script code | Understand what will happen |
-| 2ï¸âƒ£ | Complete labs manually first | Build foundational knowledge |
-| 3ï¸âƒ£ | Understand each command | Learn the "why" not just "how" |
-| 4ï¸âƒ£ | Use automation as a tool | Reinforce learning, don't replace it |
+| 1️⃣ | Read through the script code | Understand what will happen |
+| 2️⃣ | Complete labs manually first | Build foundational knowledge |
+| 3️⃣ | Understand each command | Learn the "why" not just "how" |
+| 4️⃣ | Use automation as a tool | Reinforce learning, don't replace it |
 
 </div>
 
@@ -253,7 +253,7 @@ Having issues? Here are quick solutions:
 
 ---
 
-### Google Cloud Skills Boost - Lab GSP094
+### 🌱 **Join the Developer Community** - Lab GSP094
 
 **Stay updated with everything happening in the EduLinkUp universe:**
 
