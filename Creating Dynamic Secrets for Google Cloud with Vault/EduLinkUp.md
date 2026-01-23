@@ -1,9 +1,9 @@
 ﻿<div align="center">
 
-# Creating PDFs with Go and Cloud Run
-### Google Cloud Skills Boost - Lab GSP762
+# Creating Dynamic Secrets for Google Cloud with Vault
+### Google Cloud Skills Boost - Lab GSP1007
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/3138 )
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/focuses/32204?parent=catalog)
 
 ##  Lab Overview
 
@@ -29,7 +29,7 @@ graph LR
 Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
-curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Creating%20PDFs%20with%20Go%20and%20Cloud%20Run/EduLinkUp.sh
+curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Creating%20Dynamic%20Secrets%20for%20Google%20Cloud%20with%20Vault/EduLinkUp.sh
 sudo chmod +x EduLinkUp.sh 
 ./EduLinkUp.sh
 ```
@@ -109,7 +109,7 @@ This repository provides learning resources to help you understand Google Cloud 
 <tr>
 <td width="50%" valign="top">
 
-### ✅ Intended Use - Lab GSP762
+### ✅ Intended Use
 
 - Study and understand the underlying Google Cloud operations
 - Learn automation techniques for cloud infrastructure
@@ -119,7 +119,7 @@ This repository provides learning resources to help you understand Google Cloud 
 </td>
 <td width="50%" valign="top">
 
-### 📜 Terms of Service - Lab GSP762
+### 📜 Terms of Service
 
 - Comply with Google Cloud Skills Boost terms of service
 - Use scripts for educational purposes only
@@ -203,7 +203,7 @@ Having issues? Here are quick solutions:
 
 ---
 
-### 📩 **Let's Connect Personally** - Lab GSP762
+### 📩 **Let's Connect Personally**
 
 <div align="center">
 <a href="https://www.linkedin.com/in/eccentricexplorer" target="_blank" rel="noopener noreferrer">
@@ -228,7 +228,7 @@ Having issues? Here are quick solutions:
 
 ---
 
-### 🌱 **Join the Developer Community** - Lab GSP762
+### 🌱 **Join the Developer Community**
 
 **Stay updated with everything happening in the EduLinkUp universe:**
 
