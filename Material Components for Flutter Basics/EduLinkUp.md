@@ -26,6 +26,8 @@ graph LR
 ---
 ##  Quick Start Guide
 
+Note: If the `Clone Repository` button does not appear in the IDE sidebar, clone the repository manually using the `git clone` command
+
 `Login.Dart`
 
 ```bash
