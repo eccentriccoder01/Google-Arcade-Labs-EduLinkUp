@@ -35,7 +35,7 @@ Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
 curl -LO https://raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/main/Google%20Kubernetes%20Engine-%20Qwik%20Start/EduLinkUp.sh
-chmod +x EduLinkUp.sh
+sudo chmod +x EduLinkUp.sh
 ./EduLinkUp.sh
 ```
 
