@@ -32,82 +32,81 @@ NO_COLOR=$'\033[0m'
 RESET_FORMAT=$'\033[0m'
 REVERSE_TEXT=$'\033[7m'
 
-# Check if DEVSHELL_PROJECT_ID is set
-if [[ -z "$DEVSHELL_PROJECT_ID" ]]; then
-    echo "${RED}${BOLD_TEXT}Error: DEVSHELL_PROJECT_ID is not set${RESET_FORMAT}"
-    echo "Please run this script in Google Cloud Shell or set the DEVSHELL_PROJECT_ID variable"
-    exit 1
-fi
+# Fetch zone and region
+echo "${YELLOW}${BOLD}Fetching GCP configuration...${RESET}"
+ZONE=$(gcloud compute project-info describe \
+  --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
+REGION=$(gcloud compute project-info describe \
+  --format="value(commonInstanceMetadata.items[google-compute-default-region])")
+PROJECT_ID=$(gcloud config get-value project)
 
-echo "${YELLOW_TEXT}${BOLD}Project ID: $DEVSHELL_PROJECT_ID${RESET_FORMAT}"
-
-# Step 1: Enable required Google Cloud services
-echo "${YELLOW}${BOLD}Enabling Required Google Cloud Services${RESET}"
-gcloud services enable language.googleapis.com pubsub.googleapis.com logging.googleapis.com
-
-# Step 2: Create a service account for Apigee access
-echo "${CYAN}${BOLD}Creating Apigee Service Account${RESET}"
-gcloud iam service-accounts create apigee-gc-service-access \
-  --display-name "Apigee GC Service Access" \
-  --project="$DEVSHELL_PROJECT_ID"
-
-sleep 15
-
-# Step 3: Assign Pub/Sub publisher role to the service account
-echo "${MAGENTA}${BOLD}Assigning Pub/Sub Publisher Role${RESET}"
-gcloud projects add-iam-policy-binding "$DEVSHELL_PROJECT_ID" \
-  --member="serviceAccount:apigee-gc-service-access@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com" \
-  --role="roles/pubsub.publisher"
-
-# Step 4: Assign Logging Writer role to the service account
-echo "${BLUE}${BOLD}Assigning Logging Writer Role${RESET}"
-gcloud projects add-iam-policy-binding "$DEVSHELL_PROJECT_ID" \
-  --member="serviceAccount:apigee-gc-service-access@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com" \
-  --role="roles/logging.logWriter"
-
-# Step 5: Monitor Apigee instance status
-echo "${GREEN}${BOLD}Monitoring Apigee Instance Status${RESET}"
-export INSTANCE_NAME=eval-instance
-export ENV_NAME=eval
-export PREV_INSTANCE_STATE=""
-echo "Waiting for runtime instance ${INSTANCE_NAME} to be active"
-
-while : ; do
-    export INSTANCE_STATE=$(curl -s -H "Authorization: Bearer $(gcloud auth print-access-token)" \
-        -X GET "https://apigee.googleapis.com/v1/organizations/${GOOGLE_CLOUD_PROJECT}/instances/${INSTANCE_NAME}" | \
-        jq -r "select(.state != null) | .state")
-    
-    [[ "${INSTANCE_STATE}" == "${PREV_INSTANCE_STATE}" ]] || (echo; echo "INSTANCE_STATE=${INSTANCE_STATE}")
-    export PREV_INSTANCE_STATE=${INSTANCE_STATE}
-    
-    [[ "${INSTANCE_STATE}" != "ACTIVE" ]] || break
-    echo -n "."
-    sleep 5
-done
-
+echo "${GREEN}${BOLD}Current Configuration:${RESET}"
+echo "Project ID: ${BLUE}$PROJECT_ID${RESET}"
+echo "Region: ${BLUE}$REGION${RESET}"
+echo "Zone: ${BLUE}$ZONE${RESET}"
 echo
-echo "Instance created, waiting for environment ${ENV_NAME} to be attached to instance"
 
-while : ; do
-    export ATTACHMENT_DONE=$(curl -s -H "Authorization: Bearer $(gcloud auth print-access-token)" \
-        -X GET "https://apigee.googleapis.com/v1/organizations/${GOOGLE_CLOUD_PROJECT}/instances/${INSTANCE_NAME}/attachments" | \
-        jq -r "select(.attachments != null) | .attachments[] | select(.environment == \"${ENV_NAME}\") | .environment")
-    
-    [[ "${ATTACHMENT_DONE}" != "${ENV_NAME}" ]] || break
-    echo -n "."
-    sleep 5
-done
+# Set GCP region and zone
+echo "${YELLOW}${BOLD}Setting GCP configuration...${RESET}"
+gcloud config set compute/region $REGION
+gcloud config set compute/zone $ZONE
 
-echo "***ORG IS READY TO USE***"
+# Define instance and cluster variables
+INSTANCE_NAME="gke-tutorial-admin"
+CLUSTER_NAME="rbac-demo-cluster"
+RBAC_MANIFEST_PATH="./manifests/rbac.yaml"
 
-# Step 6: Create a Pub/Sub topic
-echo "${GREEN_TEXT}${BOLD_TEXT}Creating Pub/Sub Topic: apigee-services-v1-delivery-reviews${RESET_FORMAT}"
-gcloud pubsub topics create apigee-services-v1-delivery-reviews --project="$DEVSHELL_PROJECT_ID"
+# Task 1: Configure admin instance
+echo "${MAGENTA}${BOLD}Starting Task 1: Configuring admin instance...${RESET}"
+gcloud compute ssh $INSTANCE_NAME --zone $ZONE --quiet --command "
+  sudo apt-get update &&
+  sudo apt-get install -y google-cloud-sdk-gke-gcloud-auth-plugin &&
+  echo 'source ~/.bashrc' >> ~/.bash_profile &&
+  source ~/.bash_profile &&
+  gcloud container clusters get-credentials $CLUSTER_NAME --zone $ZONE &&
+  kubectl apply -f $RBAC_MANIFEST_PATH
+"
+echo "${GREEN}${BOLD}Task 1 completed successfully!${RESET}"
 echo
-# Step 7: Display final instructions
-echo "${YELLOW_TEXT}${BOLD_TEXT}Final Instructions${RESET_FORMAT}"
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Go to this link to create an Apigee proxy: ${RESET_FORMAT}""https://console.cloud.google.com/apigee/proxy-create?project=$DEVSHELL_PROJECT_ID"
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Copy this service account: ${RESET_FORMAT}""apigee-gc-service-access@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com"
+
+# Task 2: Configure owner instance
+INSTANCE_NAME2="gke-tutorial-owner"
+echo "${MAGENTA}${BOLD}Starting Task 2: Configuring owner instance...${RESET}"
+gcloud compute ssh $INSTANCE_NAME2 --zone $ZONE --command '
+  sudo apt-get install -y google-cloud-sdk-gke-gcloud-auth-plugin &&
+  echo "export USE_GKE_GCLOUD_AUTH_PLUGIN=True" >> ~/.bashrc &&
+  source ~/.bashrc &&
+  gcloud container clusters get-credentials '"$CLUSTER_NAME"' --zone '"$ZONE"' &&
+  kubectl create -n dev -f ./manifests/hello-server.yaml &&
+  kubectl create -n prod -f ./manifests/hello-server.yaml &&
+  kubectl create -n test -f ./manifests/hello-server.yaml
+'
+echo "${GREEN}${BOLD}Task 2 completed successfully!${RESET}"
+echo
+
+# Task 3: Pod labeler configuration
+echo "${MAGENTA}${BOLD}Starting Task 3: Pod labeler configuration...${RESET}"
+gcloud compute ssh $INSTANCE_NAME --zone $ZONE --command "kubectl apply -f manifests/pod-labeler.yaml"
+
+gcloud compute ssh "$INSTANCE_NAME" --zone "$ZONE" --command '
+  kubectl get pod -o yaml -l app=pod-labeler &&
+  kubectl apply -f manifests/pod-labeler-fix-1.yaml &&
+  kubectl get deployment pod-labeler -o yaml &&
+  kubectl get pods -l app=pod-labeler &&
+  kubectl logs -l app=pod-labeler &&
+  kubectl get rolebinding pod-labeler -o yaml &&
+  kubectl get role pod-labeler -o yaml &&
+  kubectl get rolebinding pod-labeler -oyaml &&
+  kubectl get role pod-labeler -oyaml &&
+  kubectl apply -f manifests/pod-labeler-fix-2.yaml
+'
+
+gcloud compute ssh "$INSTANCE_NAME" --zone "$ZONE" --command '
+  kubectl get rolebinding pod-labeler -oyaml &&
+  kubectl get role pod-labeler -oyaml &&
+  kubectl apply -f manifests/pod-labeler-fix-2.yaml
+'
+echo "${GREEN}${BOLD}Task 3 completed successfully!${RESET}"
 echo
 
 # Final message

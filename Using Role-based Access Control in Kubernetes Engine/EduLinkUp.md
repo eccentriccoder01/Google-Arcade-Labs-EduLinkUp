@@ -1,7 +1,7 @@
 ﻿<div align="center">
 
-# Using Google Cloud Services with Apigee X
-### Google Cloud Skills Boost - Lab GSP845
+# Using Role-based Access Control in Kubernetes Engine
+### Google Cloud Skills Boost - Lab GSP493
 
 [![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/4682 )
 
@@ -203,7 +203,7 @@ Having issues? Here are quick solutions:
 
 ---
 
-### 📩 **Let's Connect Personally** - Lab GSP845
+### 📩 **Let's Connect Personally**
 
 <div align="center">
 <a href="https://www.linkedin.com/in/eccentricexplorer" target="_blank" rel="noopener noreferrer">
