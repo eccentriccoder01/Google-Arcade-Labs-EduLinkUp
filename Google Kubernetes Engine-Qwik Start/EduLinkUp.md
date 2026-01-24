@@ -34,9 +34,9 @@ graph LR
 Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
-curl -LO https://raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Google%20Kubernetes%20Engine-%20Qwik%20Start/EduLinkUp.sh
-sudo chmod +x EduLinkUp.sh
-./EduLinkUp.sh
+curl -LO https://raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/main/Google%20Kubernetes%20Engine-Qwik%20Start/EduLinkUp.sh
+chmod +x EduLinkUp.sh
+bash EduLinkUp.sh
 ```
 
 <div align="center">
