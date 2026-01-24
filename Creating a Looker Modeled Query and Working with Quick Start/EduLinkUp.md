@@ -76,7 +76,7 @@ explore: order_items {
 
 #
 explore: +order_items {
-  query: TechCode{
+  query: EduLinkUp{
       dimensions: [products.department, users.state]
       measures: [order_count, users.count]
       filters: [users.country: "USA"]
@@ -312,6 +312,7 @@ Having issues? Here are quick solutions:
 <sub>Last updated: January 2026 | Version 1.0</sub>
 
 </div>
+
 
 
 
