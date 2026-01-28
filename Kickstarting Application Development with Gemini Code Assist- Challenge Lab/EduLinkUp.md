@@ -428,7 +428,7 @@ Having issues? Here are quick solutions:
 
 ---
 
-### 📩 **Let's Connect Personally** - Lab GSP527
+### 📩 **Let\'s Connect Personally**
 
 <div align="center">
 <a href="https://www.linkedin.com/in/eccentricexplorer" target="_blank" rel="noopener noreferrer">
