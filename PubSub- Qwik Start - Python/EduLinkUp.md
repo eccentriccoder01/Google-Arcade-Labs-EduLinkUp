@@ -3,7 +3,7 @@
 # PubSub- Qwik Start - Python
 ### Google Cloud Skills Boost - Lab GSP094
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.cloudskillsboost.google/games/6168/labs/39159)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/focuses/2775?parent=catalog)
 
 </div>
 
@@ -271,4 +271,5 @@ Having issues? Here are quick solutions:
 <sub>Last updated: January 2026 | Version 1.0</sub>
 
 </div>
+
 
