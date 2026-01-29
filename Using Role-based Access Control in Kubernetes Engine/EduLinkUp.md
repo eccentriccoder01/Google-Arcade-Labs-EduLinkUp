@@ -3,7 +3,7 @@
 # Using Role-based Access Control in Kubernetes Engine
 ### Google Cloud Skills Boost - Lab GSP493
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)]( https://www.skills.google/catalog_lab/4682 )
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/focuses/5156?parent=catalog)
 
 ##  Lab Overview
 
@@ -246,6 +246,7 @@ Having issues? Here are quick solutions:
 <sub>Last updated: January 2026 | Version 1.0</sub>
 
 </div>
+
 
 
 
