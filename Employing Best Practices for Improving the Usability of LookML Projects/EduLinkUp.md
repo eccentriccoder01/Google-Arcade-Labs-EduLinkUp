@@ -488,13 +488,13 @@ We believe in learning through understanding. While our scripts save time, we st
 
 ---
 
-## ðŸ› ï¸ Troubleshooting
+## 🛠️ Troubleshooting
 
 <div align="center">
 
 ```mermaid
 graph LR
-    Issue[âŒ Encountered Issue?] --> Type{Issue Type}
+    Issue[❌ Encountered Issue?] --> Type{Issue Type}
     
     Type -->|Permission| P1[Check IAM Roles]
     Type -->|API| A1[Verify API Enabled]
@@ -506,14 +506,14 @@ graph LR
     Auth1 --> Auth2[gcloud auth login]
     S1 --> S2[Review Error Output]
     
-    P2 --> Retry[ðŸ”„ Retry Operation]
+    P2 --> Retry[🔄 Retry Operation]
     A2 --> Retry
     Auth2 --> Retry
     S2 --> Retry
     
     Retry --> Success{Fixed?}
-    Success -->|Yes| Done([âœ… Resolved])
-    Success -->|No| Help[ðŸ“ž Seek Help]
+    Success -->|Yes| Done([✅ Resolved])
+    Success -->|No| Help[📞 Seek Help]
     
     style Issue fill:#FFCDD2,stroke:#C62828,color:#000
     style Done fill:#C8E6C9,stroke:#388E3C,color:#000
