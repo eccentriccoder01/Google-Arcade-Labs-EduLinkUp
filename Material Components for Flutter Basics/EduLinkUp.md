@@ -3,7 +3,7 @@
 # Material Components for Flutter Basics
 ### Google Skills - Lab GSP887
 
-[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/games/7003/labs/43516)
+[![Open Lab](https://img.shields.io/badge/▶️_Open_Lab-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://www.skills.google/focuses/18217?parent=catalog)
 
 ##  Lab Overview
 
@@ -541,6 +541,7 @@ Having issues? Here are quick solutions:
 <sub>Last updated: January 2026 | Version 1.0</sub>
 
 </div>
+
 
 
 
