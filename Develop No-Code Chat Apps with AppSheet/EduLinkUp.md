@@ -26,7 +26,7 @@ graph LR
 ---
 ##  Quick Start Guide
 
-## Download ðŸ‘‰[Here](https://docs.google.com/spreadsheets/d/1JLfYhd08rIEQtOU3ZRusn7jcwwkhvxVg/export?format=xlsx)
+## Download 👉[Here](https://docs.google.com/spreadsheets/d/12vISNSuokkKdygxE0uNR2OzCpSLgw-CtBehQsxoms1Q/export?format=xlsx)
 
 ---
 
@@ -236,7 +236,6 @@ Having issues? Here are quick solutions:
 <sub>Last updated: January 2026 | Version 1.0</sub>
 
 </div>
-
 
 
 
