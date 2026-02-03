@@ -29,6 +29,10 @@ graph LR
 Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
+export REGION=
+```
+
+```bash
 curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Cloud%20Spanner-%20Qwik%20Start/EduLinkUp.sh
 sudo chmod +x EduLinkUp.sh 
 ./EduLinkUp.sh
