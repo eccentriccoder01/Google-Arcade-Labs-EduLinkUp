@@ -29,6 +29,12 @@ graph LR
 Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
+export REGION_1=
+export REGION_2=
+export REGION_3=
+```
+
+```bash
 curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Networking%20101/EduLinkUp.sh
 sudo chmod +x EduLinkUp.sh 
 ./EduLinkUp.sh
