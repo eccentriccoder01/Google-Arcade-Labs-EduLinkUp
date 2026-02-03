@@ -26,8 +26,8 @@ graph LR
 ---
 ##  Quick Start Guide
 
-## Download 1 [Here](https://docs.google.com/spreadsheets/d/16hUQkVeDOCX-V1fLlFKLNHI1KMf05y9i/export?format=xlsx)
-## Download 2 [Here](https://docs.google.com/presentation/d/1rxrFmqHZS3q8BEJmo3vC2Hu9fT0xQ-Wb/export/pptx)
+## Download 1 [Here](https://docs.google.com/spreadsheets/d/13DdW8kQKwqol2RSCBAxvVkfhaHRKTO1THOtigpYEVlA/export?format=xlsx)
+## Download 2 [Here](https://docs.google.com/presentation/d/1vsnIG_jZambYZgMrUROXAjGjNK_FCePa9OU_CALgomM/export/pptx)
 
 ---
 
@@ -237,7 +237,6 @@ Having issues? Here are quick solutions:
 <sub>Last updated: January 2026 | Version 1.0</sub>
 
 </div>
-
 
 
 
