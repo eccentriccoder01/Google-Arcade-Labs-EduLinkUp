@@ -29,6 +29,12 @@ graph LR
 Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
+export ZONE=$(gcloud compute project-info describe \
+--format="value(commonInstanceMetadata.items[google-compute-default-zone])")
+gcloud compute ssh centos-clean --zone=$ZONE --quiet
+```
+
+```bash
 curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/Configuring%20IAM%20Permissions%20with%20gcloud/EduLinkUp.sh
 sudo chmod +x EduLinkUp.sh 
 ./EduLinkUp.sh
