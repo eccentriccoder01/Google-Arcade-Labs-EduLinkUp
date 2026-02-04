@@ -34,6 +34,13 @@ sudo chmod +x EduLinkUp.sh
 ./EduLinkUp.sh
 ```
 
+### Sink Name: `vpc-flows`
+
+```bash
+export ZONE=$(gcloud compute instances list --filter="name=centos-clean" --format="value(zone)")
+gcloud compute ssh centos-clean --zone=$ZONE --quiet
+```
+
 
 
 > **Note:** The script automates repetitive setup tasks. We encourage you to review the script content to understand each step and learn the underlying Google Cloud operations.
