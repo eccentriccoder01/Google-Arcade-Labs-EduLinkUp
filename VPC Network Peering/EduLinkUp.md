@@ -29,6 +29,12 @@ graph LR
 Copy and paste the following commands into your Cloud Shell terminal:
 
 ```bash
+export ZONE=
+export ZONE_2=
+export PROJECT_ID_2=
+```
+
+```bash
 curl -LO raw.githubusercontent.com/eccentriccoder01/Google-Arcade-Labs-EduLinkUp/refs/heads/main/VPC%20Network%20Peering/EduLinkUp.sh
 sudo chmod +x EduLinkUp.sh 
 ./EduLinkUp.sh
