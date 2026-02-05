@@ -26,9 +26,12 @@ echo "${YELLOW_TEXT}${BOLD_TEXT}║              Launching Your Cloud Learning J
 echo "${YELLOW_TEXT}${BOLD_TEXT}╚══════════════════════════════════════════════════════════════════╝${RESET_FORMAT}"
 echo
 
+# Display initiation message
+echo "${GREEN_TEXT}${BOLD_TEXT}Initiating Execution...${RESET_FORMAT}"
 
-BOLD=`tput bold`
-RESET=`tput sgr0`
+echo
+
+echo -e "\e[1;34mCreating dataset:\e[0m"
 bq mk --dataset $DEVSHELL_PROJECT_ID:bracketology
 
 bq query --use_legacy_sql=false \
@@ -573,6 +576,14 @@ SELECT * FROM \`bracketology.ncaa_2019_tournament\`
 ))
 
 "
+
+echo
+# Delete the script if it exists
+SCRIPT_NAME="ncaa_analysis.sh"
+if [ -f "$SCRIPT_NAME" ]; then
+    echo -e "${BOLD_TEXT}${RED_TEXT}Deleting any existing script for safety...${RESET_FORMAT}${NO_COLOR}"
+    rm -- "$SCRIPT_NAME"
+fi
 
 # Final message
 echo
