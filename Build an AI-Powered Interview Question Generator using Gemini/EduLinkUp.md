@@ -38,12 +38,11 @@ def interview(prompt):
     response = model.generate_content(prompt)
     return response.text
 
-# Custom prompt example
+# Custom prompt 
 if __name__ == "__main__":
     custom_prompt = input("Enter your prompt: ") or "Give me ten interview questions for the role of program manager."
     result = interview(custom_prompt)
-    print("
-" + "="*50)
+    print("\n" + "="*50)
     print(result)
     print("="*50)
 ```
