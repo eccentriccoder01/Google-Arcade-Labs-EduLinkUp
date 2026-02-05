@@ -82,7 +82,7 @@ curl -X POST "https://compute.googleapis.com/compute/v1/projects/$DEVSHELL_PROJE
 function check_progress {
     while true; do
         echo
-        echo -n "${BOLD}${YELLOW}Have you checked your progress for Task 2 ? (Y/N): ${RESET}"
+        echo -n "${BOLD}${YELLOW}Have you checked your progress for Task 1 ? (Y/N): ${RESET}"
         read -r user_input
         if [[ "$user_input" == "Y" || "$user_input" == "y" ]]; then
             echo
@@ -91,7 +91,7 @@ function check_progress {
             break
         elif [[ "$user_input" == "N" || "$user_input" == "n" ]]; then
             echo
-            echo "${BOLD}${RED}Please check your progress for Task 2 and then press Y to continue.${RESET}"
+            echo "${BOLD}${RED}Please check your progress for Task 1 and then press Y to continue.${RESET}"
         else
             echo
             echo "${BOLD}${MAGENTA}Invalid input. Please enter Y or N.${RESET}"
